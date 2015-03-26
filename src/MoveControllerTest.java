@@ -17,7 +17,9 @@ public class MoveControllerTest {
 		 Card card = new Card(0, 3);
 		 Waste waste = new Waste(new ArrayList<Card>());
 		 Deck deck = new Deck(new ArrayList<Card>());
-	     assertTrue(moveController.moveFromDeckToWaste(card,deck, waste));
+	     
+		 assertTrue(moveController.moveFromDeckToWaste());
+		 
 		
 		
 	}
