@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.awt.font.NumericShaper;
 import java.util.ArrayList;
 
 import org.junit.Before;
@@ -13,8 +14,6 @@ public class StartControllerTest {
 		
 		startController = new StartController();
 	}
-    
-        
     @Test
     public void sizeDeckTest(){
      	 assertTrue(24==startController.sizeDeck());
@@ -36,19 +35,33 @@ public class StartControllerTest {
      }
     
     @Test
-    public void getSizeFourColours(){
+    public void getSizeFourColoursTest(){
     	ArrayList<Integer> sizeFourColours = startController.getSizeFourColurs();
     	// hay 7 ...
     	assertEquals(7, sizeFourColours);
-    	
-    	
-    	
     	//en sumaroria contiene 52-24
+    	Integer numberCardsForFourColours= new Integer(0);
+    	for(int sizeFourColor: sizeFourColours){
+    		numberCardsForFourColours+=sizeFourColor;
+    	}
+    	assertEquals(new Integer(28), numberCardsForFourColours);
+    	
+    	// el tamaño va aumentando.
+    	
+    	int numberSizeFourColor=0;
+    	
+    	for(int sizeFourColor: sizeFourColours){
+    		assertEquals(numberSizeFourColor+1, sizeFourColor);
+    		numberSizeFourColor++;
+        }
+    	
     	//el de la cima de la pila está destapado (total-1)!=0 están tapados
+    	for(int sizeFourColor: sizeFourColours){
+    	
+    	
+    	}
     	//OJO... no repetidas..
     	//OJO enorden aleatorio
-    	
-    	
     }
     
 }
