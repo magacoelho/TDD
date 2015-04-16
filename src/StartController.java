@@ -23,4 +23,9 @@ public class StartController {
 		return null;
 	}
 
+	public ArrayList<Integer> getSizeFoundations() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

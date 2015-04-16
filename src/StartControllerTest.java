@@ -30,12 +30,13 @@ public class StartControllerTest {
     }
     
     @Test 
-    public void getFoundationsTest(){
+    public void getSizeFoundationsTest(){
     	int numberFoundations = startController.getNumberFoundations();
     	assertEquals(4, numberFoundations);
-    	
-    	ArrayList<Card> foundations= startController.getFoundations();
-    	
-    	
-    }
+    	ArrayList<Integer> sizeFoundations= startController.getSizeFoundations();
+    	for (Integer sizeFoundation : sizeFoundations) {
+			assertEquals(new Integer(0), sizeFoundation);
+		}
+     }
+    
 }
