@@ -14,11 +14,7 @@ public class StartControllerTest {
 		startController = new StartController();
 	}
     
-    @Test
-	public void test() {
-	  	fail("Not yet implemented");
-	}
-     
+        
     @Test
     public void sizeDeckTest(){
      	 assertTrue(24==startController.sizeDeck());
