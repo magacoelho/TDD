@@ -28,8 +28,11 @@ public class StartController {
 	}
 
 	public ArrayList<Integer> getSizeFourColurs() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
+		for(int i=0;i<7;i++){
+			sizeFourColours.add(i+1);
+		}
+		return sizeFourColours;
 	}
 
 }
