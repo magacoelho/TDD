@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,7 +21,7 @@ public class StartControllerTest {
      
     @Test
     public void sizeDeckTest(){
-     	 assertTrue(24==startController.sizeWaste());
+     	 assertTrue(24==startController.sizeDeck());
      }
     
     @Test 
@@ -27,4 +29,13 @@ public class StartControllerTest {
       	assertTrue(0==startController.sizeWaste());
     }
     
+    @Test 
+    public void getFoundationsTest(){
+    	int numberFoundations = startController.getNumberFoundations();
+    	assertEquals(4, numberFoundations);
+    	
+    	ArrayList<Card> foundations= startController.getFoundations();
+    	
+    	
+    }
 }
