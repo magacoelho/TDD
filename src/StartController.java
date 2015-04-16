@@ -35,4 +35,9 @@ public class StartController {
 		return sizeFourColours;
 	}
 
+	public ArrayList<Card> getCardsByFourColor(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

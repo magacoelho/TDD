@@ -52,13 +52,20 @@ public class StartControllerTest {
     		numberSizeFourColor++;
         }
     	
+     	
 //    	//el de la cima de la pila está destapado (total-1)!=0 están tapados
-//    	for(int sizeFourColor: sizeFourColours){
-//    		for(int i=0;i<sizeFourColor;i++){  
-//    		  	
-//    	  	}
-//    		
-//    	}
+     	int ordinalFourColor=0;
+    	for(int sizeFourColor: sizeFourColours){
+    		ArrayList<Card> cardsByFourColor= startController.getCardsByFourColor(ordinalFourColor);
+    		int sizeByFourColor =cardsByFourColor.size();
+    		for(int j=0;j<sizeByFourColor;j++){  
+    		  	if(j==sizeByFourColor-1){
+    		  		assertTrue(cardsByFourColor.get(j).isUncovered());
+    		  	}
+    		  	assertTrue(cardsByFourColor.get(j).isCovered());
+    	  	}
+    		ordinalFourColor++;
+    	}
     	  
     	//OJO... no repetidas..
     	//OJO en orden aleatorio
