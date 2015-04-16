@@ -27,4 +27,9 @@ public class StartController {
 		return sizeFoundations;
 	}
 
+	public ArrayList<Integer> getSizeFourColurs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

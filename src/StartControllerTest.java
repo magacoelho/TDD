@@ -35,4 +35,20 @@ public class StartControllerTest {
 		}
      }
     
+    @Test
+    public void getSizeFourColours(){
+    	ArrayList<Integer> sizeFourColours = startController.getSizeFourColurs();
+    	// hay 7 ...
+    	assertEquals(7, sizeFourColours);
+    	
+    	
+    	
+    	//en sumaroria contiene 52-24
+    	//el de la cima de la pila está destapado (total-1)!=0 están tapados
+    	//OJO... no repetidas..
+    	//OJO enorden aleatorio
+    	
+    	
+    }
+    
 }
