@@ -65,12 +65,12 @@ public class StartController {
 		 for(int i=0;i<7;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
-				Card card= new Card(j, j);//ojo aleatoria... y no repetidas.
-				card.setCovered(false);
+				Card card= new Card(new Colour(), j,true);//ojo aleatoria... y no repetidas.
+				card.setCovered(true);
 				stackCard.push(card);
 				}
 			
-			stackCard.push(new Card(1,1));
+			stackCard.push(new Card(new Colour(),1,false));
 		 }
 		
 		return allFourColor;
