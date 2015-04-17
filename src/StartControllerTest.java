@@ -71,7 +71,7 @@ public class StartControllerTest {
     		for (Stack<Card> stack : allFourColors) {
 				assertFalse(stack.empty());
 				assertNotNull(stack.peek());
-				assertTrue(stack.peek().isUncovered());
+				assertTrue(!stack.peek().isCovered());
 				stack.pop();
 				while(!stack.isEmpty()){
 					assertTrue(stack.peek().isCovered());
