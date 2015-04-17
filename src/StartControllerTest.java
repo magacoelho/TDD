@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -63,19 +64,22 @@ public class StartControllerTest {
     	
      	
 //    	//el de la cima de la pila está destapado (total-1)!=0 están tapados
-     	int ordinalFourColor=0;
+     
     	for(int sizeFourColor: sizeFourColours){
-    		ArrayList<Card> cardsByFourColor= startController.getCardsByFourColor(ordinalFourColor);
-    		assertTrue(cardsByFourColor.size()>0);
-    		int sizeByFourColor =cardsByFourColor.size();
-    		for(int j=0;j<sizeByFourColor;j++){  
-    		  	if(j==sizeByFourColor-1){
-    		  		assertTrue(cardsByFourColor.get(j).isUncovered());
-    		  	}
-    		  	assertTrue(cardsByFourColor.get(j).isCovered());
-    	  	}
-    		ordinalFourColor++;
-    	}
+    		ArrayList<Stack<Card>> allFourColors= startController.getAllFourColor();
+    		
+    		for (Stack<Card> stack : allFourColors) {
+				assertFalse(stack.empty());
+				assertNotNull(stack.peek());
+				assertTrue(stack.peek().isUncovered());
+				stack.pop();
+				while(!stack.isEmpty()){
+					assertTrue(stack.peek().isCovered());
+					stack.pop();
+				}
+			}
+    	}	
+    	
     }    
     
     

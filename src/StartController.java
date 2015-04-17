@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 
 public class StartController {
@@ -37,18 +38,29 @@ public class StartController {
 
 	public ArrayList<Card> getCardsByFourColor(int i) {
 		ArrayList<Card> cardsByFourColor = new ArrayList<Card>();
+		// generar las cards...
+		// rellenar el array---
+		//regresarlo
+		for(int j=0; j< i;j++){
+			
+		}
 		
 		return cardsByFourColor;
 	}
 
-	public Object getTableau() {
-		// TODO Auto-generated method stub
+	public Tableau getTableau() {
+		
 		return new Tableau();
 	}
 
-	public Object getPlayer() {
-		// TODO Auto-generated method stub
+	public Player getPlayer() {
+		
 		return new Player();
+	}
+
+	public ArrayList<Stack<Card>> getAllFourColor() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
