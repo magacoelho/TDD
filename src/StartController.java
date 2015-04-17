@@ -41,4 +41,14 @@ public class StartController {
 		return cardsByFourColor;
 	}
 
+	public Object getTableau() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getPlayer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

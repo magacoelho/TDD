@@ -71,6 +71,14 @@ public class StartControllerTest {
     	//OJO... no repetidas..
     	//OJO en orden aleatorio
     }
+     @Test
+     public void getTableau(){
+     	 assertNotNull(startController.getTableau());
+     }
     
-    
+     @Test
+     public void getPlayer(){
+    	 assertNotNull(startController.getPlayer());
+    	 
+     }
 }
