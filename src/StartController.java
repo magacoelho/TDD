@@ -43,12 +43,12 @@ public class StartController {
 
 	public Object getTableau() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Tableau();
 	}
 
 	public Object getPlayer() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Player();
 	}
 
 }

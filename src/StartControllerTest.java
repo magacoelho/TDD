@@ -38,13 +38,22 @@ public class StartControllerTest {
     	ArrayList<Integer> sizeFourColours = startController.getSizeFourColurs();
     	// hay 7 ...
     	assertEquals(7, sizeFourColours.size());
-    	//en sumaroria contiene 52-24
+    	
     	Integer numberCardsForFourColours= new Integer(0);
     	for(int sizeFourColor: sizeFourColours){
     		numberCardsForFourColours+=sizeFourColor;
     	}
     	assertEquals(new Integer(28), numberCardsForFourColours);
     	
+    	
+    	  
+    	//OJO... no repetidas..
+    	//OJO en orden aleatorio
+    }
+    
+    @Test
+    public void getAllFourColorTest(){
+    	ArrayList<Integer> sizeFourColours = startController.getSizeFourColurs();
     	// el tamaño va aumentando.
     	int numberSizeFourColor=0;
      	for(int sizeFourColor: sizeFourColours){
@@ -67,10 +76,9 @@ public class StartControllerTest {
     	  	}
     		ordinalFourColor++;
     	}
-    	  
-    	//OJO... no repetidas..
-    	//OJO en orden aleatorio
-    }
+    }    
+    
+    
      @Test
      public void getTableau(){
      	 assertNotNull(startController.getTableau());
