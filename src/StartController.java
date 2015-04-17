@@ -36,8 +36,9 @@ public class StartController {
 	}
 
 	public ArrayList<Card> getCardsByFourColor(int i) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Card> cardsByFourColor = new ArrayList<Card>();
+		
+		return cardsByFourColor;
 	}
 
 }

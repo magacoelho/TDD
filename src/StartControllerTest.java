@@ -57,6 +57,7 @@ public class StartControllerTest {
      	int ordinalFourColor=0;
     	for(int sizeFourColor: sizeFourColours){
     		ArrayList<Card> cardsByFourColor= startController.getCardsByFourColor(ordinalFourColor);
+    		assertTrue(cardsByFourColor.size()>0);
     		int sizeByFourColor =cardsByFourColor.size();
     		for(int j=0;j<sizeByFourColor;j++){  
     		  	if(j==sizeByFourColor-1){
