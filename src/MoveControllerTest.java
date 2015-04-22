@@ -14,7 +14,7 @@ public class MoveControllerTest {
 	 }
 	//@Test
 	public void moveFromDeckToWasteTest() {
-		 Card card = new Card(0, 3);
+		// Card card = new Card(0, 3);
 		 Waste waste = new Waste(new ArrayList<Card>());
 		 Deck deck = new Deck(new ArrayList<Card>());
 	     

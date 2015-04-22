@@ -36,19 +36,7 @@ public class StartController {
 		return sizeFourColours;
 	}
 
-	public ArrayList<Card> getCardsByFourColor(int i) {
-		ArrayList<Card> cardsByFourColor = new ArrayList<Card>();
-		// generar las cards...
-		// rellenar el array---
-		//regresarlo
-		for(int j=0; j< i;j++){
-			
-		}
-		
-		return cardsByFourColor;
-	}
-
-	public Tableau getTableau() {
+		public Tableau getTableau() {
 		
 		return new Tableau();
 	}
