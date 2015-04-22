@@ -82,7 +82,17 @@ public class StartControllerTest {
     	
     }    
     
-    
+     @Test
+     private void verifyNotRepetedCardsTest(){
+    	 
+    	 
+     }
+     @Test
+     private void getSizeBaraja(){
+    	 assertTrue(52, startController.getSizeBaraja());
+    	 
+     }
+     
      @Test
      public void getTableau(){
      	 assertNotNull(startController.getTableau());
