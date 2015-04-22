@@ -64,9 +64,9 @@ public class StartController {
 		return allFourColor;
 	}
 
-	public boolean getSizeBaraja() {
+	public Integer getSizeBaraja() {
 		// TODO Auto-generated method stub
-		return false;
+		return 52;
 	}
 
 }

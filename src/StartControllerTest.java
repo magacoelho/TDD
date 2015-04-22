@@ -89,7 +89,7 @@ public class StartControllerTest {
      }
      @Test
      private void getSizeBaraja(){
-    	 assertTrue(52, startController.getSizeBaraja());
+    	 assertEquals(new Integer(52), startController.getSizeBaraja());
     	 
      }
      
