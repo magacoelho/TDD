@@ -69,4 +69,9 @@ public class StartController {
 		return 52;
 	}
 
+	public boolean verifyNotRepetedCards() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
