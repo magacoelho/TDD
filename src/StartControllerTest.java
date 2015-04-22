@@ -87,8 +87,8 @@ public class StartControllerTest {
     	 assertTrue(startController.verifyNotRepetedCards());
        }
      @Test
-     private void getSizeBaraja(){
-    	 assertEquals(new Integer(52), startController.getSizeBaraja());
+     private void getSizeFullDeck(){
+    	 assertEquals(new Integer(52), startController.getSizeFullDeck());
     	 
      }
      

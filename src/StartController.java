@@ -64,7 +64,7 @@ public class StartController {
 		return allFourColor;
 	}
 
-	public Integer getSizeBaraja() {
+	public Integer getSizeFullDeck() {
 		// TODO Auto-generated method stub
 		return 52;
 	}
