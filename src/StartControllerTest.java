@@ -83,11 +83,11 @@ public class StartControllerTest {
     }    
     
      @Test
-     private void verifyNotRepetedCardsTest(){
+     public void verifyNotRepetedCardsTest(){
     	 assertTrue(startController.verifyNotRepetedCards());
        }
      @Test
-     private void getSizeFullDeck(){
+     public void getSizeFullDeck(){
     	 assertEquals(new Integer(52), startController.getSizeFullDeck());
     	 
      }
