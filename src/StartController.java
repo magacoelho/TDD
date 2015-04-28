@@ -65,12 +65,12 @@ public class StartController {
 	}
 
 	public Integer getSizeFullDeck() {
-		// TODO Auto-generated method stub
+	
 		return 52;
 	}
 
 	public boolean verifyNotRepetedCards() {
-		// TODO Auto-generated method stub
+		
 		return true;
 	}
 
