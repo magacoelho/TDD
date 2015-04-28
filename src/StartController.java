@@ -23,6 +23,7 @@ public class StartController {
 	}
 	
 	public void initAllFourColours(){
+		
 		for(int i=0;i<7;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
@@ -32,9 +33,8 @@ public class StartController {
 			}
 			
 			stackCard.push(new Card(new Colour(),1,false));
+			allFourColor.add(stackCard);
 		}
-		
-		
 	}
 	
 	public StartController() {
@@ -66,8 +66,10 @@ public class StartController {
 
 	public ArrayList<Integer> getSizeFourColurs() {
 		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
-		for(int i=0;i<this.allFourColor.size();i++){
-			sizeFourColours.add(this.allFourColor.get(i).size());
+
+		for (Stack<Card> fourColour :this.allFourColor) {
+		  	
+		  sizeFourColours.add(fourColour.size());
 		}
 		return sizeFourColours;
 	}

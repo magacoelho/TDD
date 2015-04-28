@@ -37,7 +37,7 @@ public class Card {
 
 	public boolean isCovered() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.covered;
 	}
 
 	public void setCovered(boolean b) {
