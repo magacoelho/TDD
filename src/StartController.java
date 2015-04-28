@@ -4,7 +4,15 @@ import java.util.Stack;
 
 public class StartController {
 
-	ArrayList<Stack<Card>> allFourColor = new  ArrayList<Stack<Card>>();
+	private ArrayList<Stack<Card>> allFourColor;
+	private ArrayList<Stack<Card>> foundations;
+	
+	public StartController() {
+		super();
+		this.allFourColor= new  ArrayList<Stack<Card>>();
+		this.foundations= new ArrayList<Stack<Card>>();
+	}
+
 	public int sizeWaste() {
 	
 		return 0;
@@ -18,10 +26,13 @@ public class StartController {
 		return 4;
 	}
 
-	
-
 	public ArrayList<Integer> getSizeFoundations() {
+		
+		
 		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
+		for (Stack<Card> fundation : this.foundations) {
+			sizeFoundations.add(new Integer(0));
+		}
 		sizeFoundations.add(new Integer(0));
 		sizeFoundations.add(new Integer(0));
 		sizeFoundations.add(new Integer(0));
@@ -37,19 +48,17 @@ public class StartController {
 		return sizeFourColours;
 	}
 
-		public Tableau getTableau() {
+	public Tableau getTableau() {
 		
 		return new Tableau();
 	}
 
+	
 	public Player getPlayer() {
-		
 		return new Player();
 	}
 
 	public ArrayList<Stack<Card>> getAllFourColor() {
-		    
-		 
 		 for(int i=0;i<7;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
@@ -65,12 +74,10 @@ public class StartController {
 	}
 
 	public Integer getSizeFullDeck() {
-	
 		return 52;
 	}
 
 	public boolean verifyNotRepetedCards() {
-		
 		return true;
 	}
 
