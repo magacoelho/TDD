@@ -6,15 +6,37 @@ public class StartController {
 
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
+	private ArrayList<Stack<Card>> deck;
 	
 	private void init(){
+		this.initFoundations();
+		this.initAllFourColours();
 		
+	}
+	
+	public void initFoundations(){
+		//foundations vacios
 		for(int i=0; i<4;i++){
-			
 			this.foundations.add(new Stack<Card>());
 		}
 		
 	}
+	
+	public void initAllFourColours(){
+		for(int i=0;i<7;i++  ){
+			Stack<Card> stackCard= new Stack<Card>();
+			for(int j=0;j<i;j++){
+				Card card= new Card(new Colour(), j,true);//ojo aleatoria... y no repetidas.
+				card.setCovered(true);
+				stackCard.push(card);
+			}
+			
+			stackCard.push(new Card(new Colour(),1,false));
+		}
+		
+		
+	}
+	
 	public StartController() {
 		super();
 		this.allFourColor= new  ArrayList<Stack<Card>>();
@@ -61,17 +83,6 @@ public class StartController {
 	}
 
 	public ArrayList<Stack<Card>> getAllFourColor() {
-		 for(int i=0;i<7;i++  ){
-			Stack<Card> stackCard= new Stack<Card>();
-			for(int j=0;j<i;j++){
-				Card card= new Card(new Colour(), j,true);//ojo aleatoria... y no repetidas.
-				card.setCovered(true);
-				stackCard.push(card);
-				}
-			
-			stackCard.push(new Card(new Colour(),1,false));
-		 }
-		
 		return allFourColor;
 	}
 
