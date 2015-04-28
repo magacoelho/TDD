@@ -7,6 +7,7 @@ public class StartController {
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
 	
+	
 	public StartController() {
 		super();
 		this.allFourColor= new  ArrayList<Stack<Card>>();
@@ -14,7 +15,6 @@ public class StartController {
 	}
 
 	public int sizeWaste() {
-	
 		return 0;
 	}
 
@@ -27,16 +27,10 @@ public class StartController {
 	}
 
 	public ArrayList<Integer> getSizeFoundations() {
-		
-		
 		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
 		for (Stack<Card> fundation : this.foundations) {
-			sizeFoundations.add(new Integer(0));
+			sizeFoundations.add(fundation.size());
 		}
-		sizeFoundations.add(new Integer(0));
-		sizeFoundations.add(new Integer(0));
-		sizeFoundations.add(new Integer(0));
-		sizeFoundations.add(new Integer(0));
 		return sizeFoundations;
 	}
 
