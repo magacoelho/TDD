@@ -7,6 +7,7 @@ public class StartController {
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
 	private Stack<Card> deck;
+	private Stack<Card> waste;
 	
 	private void init(){
 		this.initFoundations();
@@ -49,11 +50,12 @@ public class StartController {
 		this.allFourColor= new  ArrayList<Stack<Card>>();
 		this.foundations= new ArrayList<Stack<Card>>();
 		this.deck= new Stack<Card>();
+		this.waste= new Stack<Card>();
 		this.init();
 	}
 
 	public int sizeWaste() {
-		return 0;
+		return this.waste.size();
 	}
 
 	public int sizeDeck() {
