@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class StartController {
 
+	ArrayList<Stack<Card>> allFourColor = new  ArrayList<Stack<Card>>();
 	public int sizeWaste() {
 	
 		return 0;
@@ -48,7 +49,6 @@ public class StartController {
 
 	public ArrayList<Stack<Card>> getAllFourColor() {
 		    
-		 ArrayList<Stack<Card>> allFourColor = new  ArrayList<Stack<Card>>();
 		 
 		 for(int i=0;i<7;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
