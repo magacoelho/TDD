@@ -65,7 +65,7 @@ public class StartControllerTest {
      	
 //    	//el de la cima de la pila está destapado (total-1)!=0 están tapados
      
-    	for(int sizeFourColor: sizeFourColours){
+    	
     		ArrayList<Stack<Card>> allFourColors= startController.getAllFourColor();
     		
     		for (Stack<Card> stack : allFourColors) {
@@ -78,7 +78,7 @@ public class StartControllerTest {
 					stack.pop();
 				}
 			}
-    	}	
+    
     	
     }    
     
