@@ -66,8 +66,8 @@ public class StartController {
 
 	public ArrayList<Integer> getSizeFourColurs() {
 		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
-		for(int i=0;i<7;i++){
-			sizeFourColours.add(i+1);
+		for(int i=0;i<this.allFourColor.size();i++){
+			sizeFourColours.add(this.allFourColor.get(i).size());
 		}
 		return sizeFourColours;
 	}
