@@ -6,14 +6,20 @@ public class StartController {
 
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
-	private ArrayList<Stack<Card>> deck;
+	private Stack<Card> deck;
 	
 	private void init(){
 		this.initFoundations();
 		this.initAllFourColours();
+		this.initDeck();
 		
 	}
 	
+	public void initDeck() {
+		
+		
+	}
+
 	public void initFoundations(){
 		//foundations vacios
 		for(int i=0; i<4;i++){
@@ -41,6 +47,7 @@ public class StartController {
 		super();
 		this.allFourColor= new  ArrayList<Stack<Card>>();
 		this.foundations= new ArrayList<Stack<Card>>();
+		this.deck= new Stack<Card>();
 		this.init();
 	}
 
