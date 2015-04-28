@@ -57,7 +57,7 @@ public class StartController {
 	}
 
 	public int sizeDeck() {
-		return 24;
+		return deck.size();
 	}
 
 	public int getNumberFoundations() {
