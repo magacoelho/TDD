@@ -18,9 +18,9 @@ public class StartController {
 	
 	public void initDeck() {
 		for(int i=0; i<24;i++){
-			this.deck.push(new Card(new Colour(), i, true));
+			Card card= new Card(new Colour(), i,true);
+			this.deck.push(card);
 		}
-		
 	}
 
 	public void initFoundations(){
@@ -29,10 +29,20 @@ public class StartController {
 		}
 		
 	}
+	public void initFullDeck(){
+		//generar las 52 cartas...
+		//hacer una pila de 52..
+		    // con un ciclo... del 1 al 13
+		      // una por cada color--
+	     //revolverlas..
+		    // recorrer la pila y con una pila auxiliar
+		       // irlas poniendo en desorden..
+		//nota en los metodos init... tomar elementos de esta pila.
+		
+	}
 	
 	public void initAllFourColours(){
-		
-		for(int i=0;i<7;i++  ){
+	for(int i=0;i<7;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
 				Card card= new Card(new Colour(), j,true);//ojo aleatoria... y no repetidas.
