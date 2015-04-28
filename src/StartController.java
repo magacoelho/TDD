@@ -7,11 +7,19 @@ public class StartController {
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
 	
-	
+	private void init(){
+		
+		for(int i=0; i<4;i++){
+			
+			this.foundations.add(new Stack<Card>());
+		}
+		
+	}
 	public StartController() {
 		super();
 		this.allFourColor= new  ArrayList<Stack<Card>>();
 		this.foundations= new ArrayList<Stack<Card>>();
+		this.init();
 	}
 
 	public int sizeWaste() {
@@ -23,7 +31,7 @@ public class StartController {
 	}
 
 	public int getNumberFoundations() {
-		return 4;
+		return this.foundations.size();
 	}
 
 	public ArrayList<Integer> getSizeFoundations() {
