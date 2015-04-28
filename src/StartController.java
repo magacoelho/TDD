@@ -16,13 +16,14 @@ public class StartController {
 	}
 	
 	public void initDeck() {
-		
+		for(int i=0; i<24;i++){
+			this.deck.push(new Card(new Colour(), i, true));
+		}
 		
 	}
 
 	public void initFoundations(){
-		//foundations vacios
-		for(int i=0; i<4;i++){
+			for(int i=0; i<4;i++){
 			this.foundations.add(new Stack<Card>());
 		}
 		
