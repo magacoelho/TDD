@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import es.votaciones.persistence.models.utils.NivelEstudio;
-
-
 public class StartController {
 
 	private ArrayList<Stack<Card>> allFourColor;
@@ -45,7 +42,8 @@ public class StartController {
 		    // con un ciclo... del 1 al 13
 		for(int i=0;i<13;i++){
 			for(Colour colour:colours){
-		      // una por cada color--
+				Card card = new Card(colour,i,true);
+				fullWaste.add(card);
 			}
 		}		
 	     //revolverlas..
@@ -59,12 +57,13 @@ public class StartController {
 	for(int i=0;i<7;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
-				Card card= new Card(new Colour(), j,true);//ojo aleatoria... y no repetidas.
+				Card card= this.getRandomCard();//ojo aleatoria... y no repetidas.
 				card.setCovered(true);
 				stackCard.push(card);
 			}
-			
-			stackCard.push(new Card(new Colour(),1,false));
+			Card card = this.getRandomCard();
+			card.setCovered(false);
+			stackCard.push(card);
 			allFourColor.add(stackCard);
 		}
 	}
