@@ -51,10 +51,7 @@ public class StartController {
 	}
 
 	
-	public Player getPlayer() {
-		return this.player;
-	}
-
+	
 	public ArrayList<Stack<Card>> getAllFourColor() {
 		return this.tableau.getAllFourColor();
 	}

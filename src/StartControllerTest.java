@@ -83,9 +83,5 @@ public class StartControllerTest {
      	 assertNotNull(startController.getTableau());
      }
     
-     @Test
-     public void getPlayer(){
-    	 assertNotNull(startController.getPlayer());
-    	 
-     }
+    
 }
