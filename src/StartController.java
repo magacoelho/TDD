@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
+
+import es.votaciones.persistence.models.utils.NivelEstudio;
 
 
 public class StartController {
@@ -30,12 +33,14 @@ public class StartController {
 		
 	}
 	public void initFullDeck(){
+		List<Colour> colours= new ArrayList<Colour>();
 		//generar las 52 cartas...
 		 //hacer una pila de 52..
 		    // con un ciclo... del 1 al 13
 		for(int i=0;i<13;i++){
+			for(Colour colour:colours){
 		      // una por cada color--
-			
+			}
 		}		
 	     //revolverlas..
 		    // recorrer la pila y con una pila auxiliar
