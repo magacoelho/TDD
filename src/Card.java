@@ -28,21 +28,11 @@ public class Card {
 	public void setNumber(int number) {
 		this.number = number;
 	}
-
-	
-	public boolean isUncovered() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	public boolean isCovered() {
-		// TODO Auto-generated method stub
 		return this.covered;
 	}
 
 	public void setCovered(boolean covered) {
 		this.covered=covered;
-		
 	}
-
 }
