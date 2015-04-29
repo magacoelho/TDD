@@ -5,6 +5,7 @@ import java.util.Stack;
 
 public class StartController {
 
+	private static final int NUMBERfOUNDATIOS = 4;
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
 	private Stack<Card> deck;
@@ -37,7 +38,7 @@ public class StartController {
 	}
 
 	public void initFoundations(){
-			for(int i=0; i<4;i++){
+			for(int i=0; i<NUMBERfOUNDATIOS;i++){
 			this.foundations.add(new Stack<Card>());
 		}
 		
