@@ -11,6 +11,7 @@ public class StartController {
 	private ArrayList<Stack<Card>> foundations;
 	private Stack<Card> deck;
 	private Stack<Card> waste;
+	private List<Card> fullWaste;
 	
 	private void init(){
 		this.initFoundations();
@@ -21,9 +22,14 @@ public class StartController {
 	
 	public void initDeck() {
 		for(int i=0; i<24;i++){
-			Card card= new Card(new Colour(), i,true);
+			Card card=this.getRandomCard();
 			this.deck.push(card);
 		}
+	}
+
+	private Card getRandomCard() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public void initFoundations(){
