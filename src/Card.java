@@ -40,8 +40,8 @@ public class Card {
 		return this.covered;
 	}
 
-	public void setCovered(boolean b) {
-		// TODO Auto-generated method stub
+	public void setCovered(boolean covered) {
+		this.covered=covered;
 		
 	}
 

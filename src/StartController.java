@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Stack;
 
 public class StartController {
@@ -8,9 +9,10 @@ public class StartController {
 	private ArrayList<Stack<Card>> foundations;
 	private Stack<Card> deck;
 	private Stack<Card> waste;
-	private List<Card> fullWaste;
+	private List<Card> fullDeck;
 	
 	private void init(){
+		this.initFullDeck();
 		this.initFoundations();
 		this.initAllFourColours();
 		this.initDeck();
@@ -25,8 +27,12 @@ public class StartController {
 	}
 
 	private Card getRandomCard() {
-		// TODO Auto-generated method stub
-		return null;
+		Random r = new Random();
+		int ordinalFulDeck=0;
+		if(fullDeck.size()>1) r.nextInt(fullDeck.size()-1);
+		Card card= fullDeck.get(ordinalFulDeck);
+		fullDeck.remove(ordinalFulDeck);
+		return card;
 	}
 
 	public void initFoundations(){
@@ -36,14 +42,16 @@ public class StartController {
 		
 	}
 	public void initFullDeck(){
-		List<Colour> colours= new ArrayList<Colour>();
+		Colour[] colours= Colour.values();
+		
+		
 		//generar las 52 cartas...
 		 //hacer una pila de 52..
 		    // con un ciclo... del 1 al 13
 		for(int i=0;i<13;i++){
 			for(Colour colour:colours){
-				Card card = new Card(colour,i,true);
-				fullWaste.add(card);
+				Card card = new Card(colour,i+1,true);
+				fullDeck.add(card);
 			}
 		}		
 	     //revolverlas..
@@ -74,6 +82,7 @@ public class StartController {
 		this.foundations= new ArrayList<Stack<Card>>();
 		this.deck= new Stack<Card>();
 		this.waste= new Stack<Card>();
+		this.fullDeck= new ArrayList<Card>();
 		this.init();
 	}
 
