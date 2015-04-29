@@ -38,36 +38,24 @@ public class StartControllerTest {
     @Test
     public void getSizeFourColoursTest(){
     	ArrayList<Integer> sizeFourColours = startController.getSizeFourColurs();
-    	// hay 7 ...
-    	assertEquals(7, sizeFourColours.size());
-    	
+    	assertEquals(Constantes.NUMBER_ALL_FOURCOLOURS, sizeFourColours.size());
     	Integer numberCardsForFourColours= new Integer(0);
     	for(int sizeFourColor: sizeFourColours){
     		numberCardsForFourColours+=sizeFourColor;
     	}
     	assertEquals(new Integer(Constantes.NUMBER_TOTAL_INITIAL_CARDS_FOURCOLOUR), numberCardsForFourColours);
-    	
-    	
-    	  
-    	//OJO... no repetidas..
-    	//OJO en orden aleatorio
     }
     
     @Test
     public void getAllFourColorTest(){
     	ArrayList<Integer> sizeFourColours = startController.getSizeFourColurs();
-    	// el tamaño va aumentando.
-    	int numberSizeFourColor=0;
+        	int numberSizeFourColor=0;
      	for(int sizeFourColor: sizeFourColours){
     		assertEquals(numberSizeFourColor+1, sizeFourColor);
     		numberSizeFourColor++;
         }
-    	
-     	
-//    	//el de la cima de la pila está destapado (total-1)!=0 están tapados
-     		ArrayList<Stack<Card>> allFourColors= startController.getAllFourColor();
-    		
-    		for (Stack<Card> stack : allFourColors) {
+ 		ArrayList<Stack<Card>> allFourColors= startController.getAllFourColor();
+   		for (Stack<Card> stack : allFourColors) {
 				assertFalse(stack.empty());
 				assertNotNull(stack.peek());
 				assertTrue(!stack.peek().isCovered());
@@ -78,8 +66,7 @@ public class StartControllerTest {
 				}
 			}
     
-    	
-    }    
+   }    
     
      @Test
      public void verifyNotRepetedCardsTest(){

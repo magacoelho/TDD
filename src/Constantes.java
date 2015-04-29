@@ -14,4 +14,5 @@ public interface Constantes {
 	//waste
 	public static final int NUMBER_CARDS_INITIAL_WASTE = 0;
 	
+	
 }
