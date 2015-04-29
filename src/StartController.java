@@ -15,6 +15,8 @@ public class StartController {
 	private Stack<Card> waste;
 	private List<Card> fullDeck;
 	private List<Card> fullDeckNotRepartida;
+	private Player player;
+	private Tableau tableau;
 	
 	private void init(){
 		this.initFullDeck();
@@ -82,6 +84,8 @@ public class StartController {
 		this.waste= new Stack<Card>();
 		this.fullDeck= new ArrayList<Card>();
 		this.fullDeckNotRepartida= new ArrayList<Card>();
+		this.player= new Player();
+		this.tableau= new Tableau();
 		this.init();
 	}
 
@@ -117,12 +121,12 @@ public class StartController {
 
 	public Tableau getTableau() {
 		
-		return new Tableau();
+		return this.tableau;
 	}
 
 	
 	public Player getPlayer() {
-		return new Player();
+		return this.player;
 	}
 
 	public ArrayList<Stack<Card>> getAllFourColor() {
