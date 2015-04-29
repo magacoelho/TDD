@@ -1,7 +1,10 @@
+package es.klondike.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
+
+import es.klondike.utils.Constantes;
 
 
 public class Tableau {

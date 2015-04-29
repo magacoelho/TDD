@@ -1,3 +1,4 @@
+package es.klondike.model;
 
 public enum Colour {
 	SPADE, CLUB, DIAMOND, HEART;

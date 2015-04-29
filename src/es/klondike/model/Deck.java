@@ -1,3 +1,4 @@
+package es.klondike.model;
 import java.util.ArrayList;
 
 

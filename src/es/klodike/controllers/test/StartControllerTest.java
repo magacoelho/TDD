@@ -1,3 +1,4 @@
+package es.klodike.controllers.test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -5,6 +6,10 @@ import java.util.Stack;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import es.klodike.controllers.StartController;
+import es.klondike.model.Card;
+import es.klondike.utils.Constantes;
 
 
 public class StartControllerTest {

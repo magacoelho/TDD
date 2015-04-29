@@ -1,3 +1,4 @@
+package es.klondike.model;
 
 public class Card {
     private Colour colour;

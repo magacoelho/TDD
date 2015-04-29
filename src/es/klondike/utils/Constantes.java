@@ -1,3 +1,4 @@
+package es.klondike.utils;
 
 public interface Constantes {
     //FOURCOLOURS
