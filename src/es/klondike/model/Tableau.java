@@ -15,7 +15,7 @@ public class Tableau {
 	private Stack<Card> waste;
 	private List<Card> fullDeck;
 	private List<Card> fullDeckNotRepartida;
-	private Player player;
+
 	
 	public Tableau() {
 		super();
@@ -25,7 +25,7 @@ public class Tableau {
 		this.waste= new Stack<Card>();
 		this.fullDeck= new ArrayList<Card>();
 		this.fullDeckNotRepartida= new ArrayList<Card>();
-		this.player= new Player();
+
 		this.init();
 	
 	}
@@ -65,12 +65,8 @@ public class Tableau {
 	public void setFullDeckNotRepartida(List<Card> fullDeckNotRepartida) {
 		this.fullDeckNotRepartida = fullDeckNotRepartida;
 	}
-	public Player getPlayer() {
-		return player;
-	}
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
+
+
    // metodos neescraios ara crear un tablero
 	
 
