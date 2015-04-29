@@ -4,103 +4,32 @@ import java.util.Random;
 import java.util.Stack;
 
 public class StartController {
-
-
-	private ArrayList<Stack<Card>> allFourColor;
-	private ArrayList<Stack<Card>> foundations;
-	private Stack<Card> deck;
-	private Stack<Card> waste;
-	private List<Card> fullDeck;
-	private List<Card> fullDeckNotRepartida;
-	private Player player;
+	
+	
 	private Tableau tableau;
-	
-	private void init(){
-		this.initFullDeck();
-		this.initFoundations();
-		this.initAllFourColours();
-		this.initDeck();
-		
-	}
-	
-	public void initDeck() {
-		for(int i=0; i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
-			Card card=this.getRandomCard();
-			this.deck.push(card);
-		}
-	}
 
-	private Card getRandomCard() {
-		Random r = new Random();
-		int ordinalFulDeck=0;
-		if(fullDeckNotRepartida.size()>1) r.nextInt(fullDeckNotRepartida.size()-1);
-		Card card= fullDeckNotRepartida.get(ordinalFulDeck);
-		fullDeckNotRepartida.remove(ordinalFulDeck);
-		return card;
-	}
-
-	public void initFoundations(){
-			for(int i=0; i<Constantes.NUMBER_FOUNDATIONS;i++){
-			this.foundations.add(new Stack<Card>());
-		}
-		
-	}
-	public void initFullDeck(){
-		Colour[] colours= Colour.values();
-	
-		for(int i=0;i<Constantes.NUMBER_COLOUR_CARD;i++){
-			for(Colour colour:colours){
-				Card card = new Card(colour,i+1,true);
-				fullDeck.add(card);
-				fullDeckNotRepartida.add(card);
-			}
-		}		
-	 
-	}
-	
-	public void initAllFourColours(){
-	for(int i=0;i<Constantes.NUMBER_ALL_FOURCOLOURS;i++  ){
-			Stack<Card> stackCard= new Stack<Card>();
-			for(int j=0;j<i;j++){
-				Card card= this.getRandomCard();//ojo aleatoria... y no repetidas.
-				card.setCovered(true);
-				stackCard.push(card);
-			}
-			Card card = this.getRandomCard();
-			card.setCovered(false);
-			stackCard.push(card);
-			allFourColor.add(stackCard);
-		}
-	}
 	
 	public StartController() {
 		super();
-		this.allFourColor= new  ArrayList<Stack<Card>>();
-		this.foundations= new ArrayList<Stack<Card>>();
-		this.deck= new Stack<Card>();
-		this.waste= new Stack<Card>();
-		this.fullDeck= new ArrayList<Card>();
-		this.fullDeckNotRepartida= new ArrayList<Card>();
-		this.player= new Player();
 		this.tableau= new Tableau();
-		this.init();
+		
 	}
 
 	public int sizeWaste() {
-		return this.waste.size();
+		return this.tableau.getWaste().size();
 	}
 
 	public int sizeDeck() {
-		return deck.size();
+		return this.tableau.getDeck().size();
 	}
 
 	public int getNumberFoundations() {
-		return this.foundations.size();
+		return this.tableau.getFoundations().size();
 	}
 
 	public ArrayList<Integer> getSizeFoundations() {
 		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
-		for (Stack<Card> fundation : this.foundations) {
+		for (Stack<Card> fundation :  this.tableau.getFoundations()) {
 			sizeFoundations.add(fundation.size());
 		}
 		return sizeFoundations;
@@ -109,7 +38,7 @@ public class StartController {
 	public ArrayList<Integer> getSizeFourColurs() {
 		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
 
-		for (Stack<Card> fourColour :this.allFourColor) {
+		for (Stack<Card> fourColour :this.tableau.getAllFourColor()) {
 		  	
 		  sizeFourColours.add(fourColour.size());
 		}
@@ -127,24 +56,24 @@ public class StartController {
 	}
 
 	public ArrayList<Stack<Card>> getAllFourColor() {
-		return allFourColor;
+		return this.tableau.getAllFourColor();
 	}
 
 	public Integer getSizeFullDeck() {
-		return fullDeck.size();
+		return this.tableau.getFullDeck().size();
 	}
 
 	public boolean verifyNotRepetedCards() {
 		boolean noRepetidas= true;
-	    for (Card card : fullDeck) {
-			if(fullDeck.lastIndexOf(card)!=fullDeck.indexOf(card)){
+	    for (Card card : this.tableau.getFullDeck()) {
+			if( this.tableau.getFullDeck().lastIndexOf(card)!= this.tableau.getFullDeck().indexOf(card)){
 				noRepetidas=false;
 				break;
 			}
 		}
-	    for (Stack<Card> stack : allFourColor) {
+	    for (Stack<Card> stack :this.tableau.getAllFourColor()) {
 			for (Card card : stack) {
-				 for (Stack<Card> stack2 : allFourColor){
+				 for (Stack<Card> stack2 : this.tableau.getAllFourColor()){
 					 if(stack2.lastIndexOf(card)!=stack2.indexOf(card)){
 						 noRepetidas=false;
 						 break;
@@ -152,8 +81,8 @@ public class StartController {
 				 }
 			}
 		}
-	    for (Card card : waste)  {
-	    	if(waste.lastIndexOf(card)!=waste.indexOf(card)){
+	    for (Card card : this.tableau.getWaste())  {
+	    	if(this.tableau.getWaste().lastIndexOf(card)!=this.tableau.getWaste().indexOf(card)){
 				noRepetidas=false;
 				break;
 			}
