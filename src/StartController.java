@@ -126,19 +126,18 @@ public class StartController {
 	}
 
 	public Integer getSizeFullDeck() {
-//		ArrayList<Integer> sizeFourColours = this.getSizeFourColurs();
-//		int numCards = 0;
-//		for (Integer integer : sizeFourColours) {
-//			numCards+=integer;
-//		}
-//		numCards+=this.sizeDeck();
 		return fullDeck.size();
 	}
 
 	public boolean verifyNotRepetedCards() {
-		boolean repetidas= false;
-	
-		return true;
+		boolean noRepetidas= true;
+	    for (Card card : fullDeck) {
+			if(fullDeck.lastIndexOf(card)!=fullDeck.indexOf(card)){
+				noRepetidas=false;
+				break;
+			}
+		}
+	   return noRepetidas;
 	}
 
 }
