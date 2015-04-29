@@ -67,7 +67,7 @@ public class StartControllerTest {
 			}
     
    }    
-    
+     
      @Test
      public void verifyNotRepetedCardsTest(){
     	 assertTrue(startController.verifyNotRepetedCards());
