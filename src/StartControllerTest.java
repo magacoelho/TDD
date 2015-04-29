@@ -8,7 +8,8 @@ import org.junit.Test;
 
 
 public class StartControllerTest {
-    private  StartController startController;
+  
+	private  StartController startController;
 	@Before
 	public void before(){
 		
@@ -16,21 +17,21 @@ public class StartControllerTest {
 	}
     @Test
     public void sizeDeckTest(){
-     	 assertTrue(24==startController.sizeDeck());
+     	 assertTrue(Constantes.NUMBER_CARDS_DECK_INITIAL==startController.sizeDeck());
      }
     
     @Test 
     public void sizeWasteTest(){
-      	assertTrue(0==startController.sizeWaste());
+      	assertTrue(Constantes.NUMBER_CARDS_INITIAL_WASTE==startController.sizeWaste());
     }
     
     @Test 
     public void getSizeFoundationsTest(){
     	int numberFoundations = startController.getNumberFoundations();
-    	assertEquals(4, numberFoundations);
+    	assertEquals(Constantes.NUMBER_FOUNDATIONS, numberFoundations);
     	ArrayList<Integer> sizeFoundations= startController.getSizeFoundations();
     	for (Integer sizeFoundation : sizeFoundations) {
-			assertEquals(new Integer(0), sizeFoundation);
+			assertEquals(new Integer(Constantes.NUMBER_CARDS_INITIAL_FOUNDATIONS), sizeFoundation);
 		}
      }
     
@@ -44,7 +45,7 @@ public class StartControllerTest {
     	for(int sizeFourColor: sizeFourColours){
     		numberCardsForFourColours+=sizeFourColor;
     	}
-    	assertEquals(new Integer(28), numberCardsForFourColours);
+    	assertEquals(new Integer(Constantes.NUMBER_TOTAL_INITIAL_CARDS_FOURCOLOUR), numberCardsForFourColours);
     	
     	
     	  
@@ -86,7 +87,7 @@ public class StartControllerTest {
        }
      @Test
      public void getSizeFullDeck(){
-    	 assertEquals(new Integer(52), startController.getSizeFullDeck());
+    	 assertEquals(new Integer(Constantes.NUMBER_TOTAL_CARDS), startController.getSizeFullDeck());
     	 
      }
      

@@ -5,10 +5,7 @@ import java.util.Stack;
 
 public class StartController {
 
-	private static final int NUMBER_ALL_FOURCOLOURS = 7;
-	private static final int NUMBER_FOUNDATIONS = 4;
-	private static final int NUMBER_COLOUR_CARD = 13;
-	private static final int NUMBER_CARDS_DECK_INITIAL = 24;
+
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
 	private Stack<Card> deck;
@@ -27,7 +24,7 @@ public class StartController {
 	}
 	
 	public void initDeck() {
-		for(int i=0; i<NUMBER_CARDS_DECK_INITIAL;i++){
+		for(int i=0; i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
 			Card card=this.getRandomCard();
 			this.deck.push(card);
 		}
@@ -43,7 +40,7 @@ public class StartController {
 	}
 
 	public void initFoundations(){
-			for(int i=0; i<NUMBER_FOUNDATIONS;i++){
+			for(int i=0; i<Constantes.NUMBER_FOUNDATIONS;i++){
 			this.foundations.add(new Stack<Card>());
 		}
 		
@@ -51,7 +48,7 @@ public class StartController {
 	public void initFullDeck(){
 		Colour[] colours= Colour.values();
 	
-		for(int i=0;i<NUMBER_COLOUR_CARD;i++){
+		for(int i=0;i<Constantes.NUMBER_COLOUR_CARD;i++){
 			for(Colour colour:colours){
 				Card card = new Card(colour,i+1,true);
 				fullDeck.add(card);
@@ -62,7 +59,7 @@ public class StartController {
 	}
 	
 	public void initAllFourColours(){
-	for(int i=0;i<NUMBER_ALL_FOURCOLOURS;i++  ){
+	for(int i=0;i<Constantes.NUMBER_ALL_FOURCOLOURS;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
 				Card card= this.getRandomCard();//ojo aleatoria... y no repetidas.
