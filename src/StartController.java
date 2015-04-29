@@ -141,6 +141,22 @@ public class StartController {
 				break;
 			}
 		}
+	    for (Stack<Card> stack : allFourColor) {
+			for (Card card : stack) {
+				 for (Stack<Card> stack2 : allFourColor){
+					 if(stack2.lastIndexOf(card)!=stack2.indexOf(card)){
+						 noRepetidas=false;
+						 break;
+					 }
+				 }
+			}
+		}
+	    for (Card card : waste)  {
+	    	if(waste.lastIndexOf(card)!=waste.indexOf(card)){
+				noRepetidas=false;
+				break;
+			}
+		}
 	   return noRepetidas;
 	}
 
