@@ -31,12 +31,15 @@ public class StartController {
 	}
 	public void initFullDeck(){
 		//generar las 52 cartas...
-		//hacer una pila de 52..
+		 //hacer una pila de 52..
 		    // con un ciclo... del 1 al 13
+		for(int i=0;i<13;i++){
 		      // una por cada color--
+			
+		}		
 	     //revolverlas..
 		    // recorrer la pila y con una pila auxiliar
-		       // irlas poniendo en desorden..
+		       // irlas poniendo en desorden.. (nuemero aleatoria entre 1 
 		//nota en los metodos init... tomar elementos de esta pila.
 		
 	}

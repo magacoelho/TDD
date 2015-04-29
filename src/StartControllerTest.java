@@ -64,9 +64,7 @@ public class StartControllerTest {
     	
      	
 //    	//el de la cima de la pila está destapado (total-1)!=0 están tapados
-     
-    	
-    		ArrayList<Stack<Card>> allFourColors= startController.getAllFourColor();
+     		ArrayList<Stack<Card>> allFourColors= startController.getAllFourColor();
     		
     		for (Stack<Card> stack : allFourColors) {
 				assertFalse(stack.empty());
