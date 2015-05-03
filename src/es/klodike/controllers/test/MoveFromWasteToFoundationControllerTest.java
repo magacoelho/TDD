@@ -8,6 +8,7 @@ import org.junit.Test;
 import es.klodike.controllers.MoveFromDeckToWasteController;
 import es.klodike.controllers.MoveFromWasteToFoundationController;
 import es.klondike.model.Board;
+import es.klondike.model.Card;
 
 public class MoveFromWasteToFoundationControllerTest {
 
@@ -23,7 +24,16 @@ public class MoveFromWasteToFoundationControllerTest {
    
 	@Test
 	public void MoveFromWasteToFoundationControllerTest(){
-		//precondicion: Carta a mover la cima del waste.
+		Card cardToMove = board.getWaste().peek();
+		assertNotNull(card);
+		//elementos Carta a mover la cima del waste.
+		 // El foundation debe corresponder a la misma Suit
+		// si la carta a mover es un as...debe settearse el foundation como de este Suit
+		// y verificar q se ha agergado
+		 // la cima del foundation debe ser un ordinal menor que la carta a mover 
+		// y verificar q se ha agregado
+		  
+		
 		//se debe saber hacia donde se quiere mover.
 		//Si la carta a mover es un as... debe haber un foundatoons vacio...
 		    //-> waste.size
