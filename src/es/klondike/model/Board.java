@@ -7,7 +7,7 @@ import java.util.Stack;
 import es.klondike.utils.Constantes;
 
 
-public class Tableau {
+public class Board {
 
 	private ArrayList<Stack<Card>> allFourColor;
 	private ArrayList<Stack<Card>> foundations;
@@ -17,7 +17,7 @@ public class Tableau {
 	private List<Card> fullDeckNotRepartida;
 
 	
-	public Tableau() {
+	public Board() {
 		super();
 		this.allFourColor= new  ArrayList<Stack<Card>>();
 		this.foundations= new ArrayList<Stack<Card>>();
@@ -94,8 +94,10 @@ public class Tableau {
 	}
 
 	public void initFoundations(){
+		
 			for(int i=0; i<Constantes.NUMBER_FOUNDATIONS;i++){
 			this.foundations.add(new Stack<Card>());
+			
 		}
 		
 	}

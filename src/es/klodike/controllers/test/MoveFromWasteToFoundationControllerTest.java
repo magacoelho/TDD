@@ -7,16 +7,16 @@ import org.junit.Test;
 
 import es.klodike.controllers.MoveFromDeckToWasteController;
 import es.klodike.controllers.MoveFromWasteToFoundationController;
-import es.klondike.model.Tableau;
+import es.klondike.model.Board;
 
 public class MoveFromWasteToFoundationControllerTest {
 
-	 private Tableau tableau;
+	 private Board tableau;
 	private MoveFromWasteToFoundationController moveFromWasteToFoundationController;
 
 	@Before
 	 public void before(){
-		 this.tableau = new Tableau();
+		 this.tableau = new Board();
 		 this.tableau.init();
 		 this.moveFromWasteToFoundationController= new  MoveFromWasteToFoundationController(this.tableau);
 	 }

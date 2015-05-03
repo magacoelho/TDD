@@ -1,15 +1,15 @@
 package es.klodike.controllers;
 
 import es.klondike.model.Card;
-import es.klondike.model.Tableau;
+import es.klondike.model.Board;
 import es.klondike.utils.Constantes;
 
 public class MoveFromDeckToWasteController {
 
 
-	private Tableau tableau;
+	private Board tableau;
 
-	public MoveFromDeckToWasteController(Tableau tableau) {
+	public MoveFromDeckToWasteController(Board tableau) {
 		this.tableau= tableau;
 	}
 

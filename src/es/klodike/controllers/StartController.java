@@ -3,14 +3,14 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import es.klondike.model.Card;
-import es.klondike.model.Tableau;
+import es.klondike.model.Board;
 
 public class StartController {
-	private Tableau tableau;
+	private Board tableau;
 	
 	public StartController() {
 		super();
-		this.tableau= new Tableau();
+		this.tableau= new Board();
 		this.tableau.init();
 	}
 	
@@ -44,7 +44,7 @@ public class StartController {
 		return sizeFourColours;
 	}
 	
-	public Tableau getTableau() {
+	public Board getTableau() {
 		return this.tableau;
 	}
 

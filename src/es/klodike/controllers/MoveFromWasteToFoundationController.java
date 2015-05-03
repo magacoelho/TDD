@@ -1,12 +1,12 @@
 package es.klodike.controllers;
 
-import es.klondike.model.Tableau;
+import es.klondike.model.Board;
 
 public class MoveFromWasteToFoundationController {
 
-	private Tableau tableau;
+	private Board tableau;
 
-	public MoveFromWasteToFoundationController(Tableau tableau) {
+	public MoveFromWasteToFoundationController(Board tableau) {
 		this.tableau= tableau;
 		
 	}
