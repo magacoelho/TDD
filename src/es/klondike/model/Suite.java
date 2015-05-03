@@ -1,6 +1,6 @@
 package es.klondike.model;
 
-public enum Colour {
+public enum Suite {
 	SPADE, CLUB, DIAMOND, HEART;
 	 @Override
 	  public String toString() {

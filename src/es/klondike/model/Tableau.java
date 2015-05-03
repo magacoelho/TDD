@@ -100,10 +100,10 @@ public class Tableau {
 		
 	}
 	public void initFullDeck(){
-		Colour[] colours= Colour.values();
+		Suite[] colours= Suite.values();
 	
 		for(int i=0;i<Constantes.NUMBER_COLOUR_CARD;i++){
-			for(Colour colour:colours){
+			for(Suite colour:colours){
 				Card card = new Card(colour,i+1,Constantes.COVERED_CARD);
 				this.fullDeck.add(card);
 				fullDeckNotRepartida.add(card);

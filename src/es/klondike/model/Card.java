@@ -1,24 +1,24 @@
 package es.klondike.model;
 
 public class Card {
-    private Colour colour;
+    private Suite colour;
     private int number;
     private boolean covered;
     
     
     
-	public Card(Colour colour, int number, boolean covered) {
+	public Card(Suite colour, int number, boolean covered) {
 		super();
 		this.colour = colour;
 		this.number = number;
 		this.covered = covered;
 	}
 
-	public Colour getColour() {
+	public Suite getColour() {
 		return colour;
 	}
 
-	public void setColour(Colour colour) {
+	public void setColour(Suite colour) {
 		this.colour = colour;
 	}
 

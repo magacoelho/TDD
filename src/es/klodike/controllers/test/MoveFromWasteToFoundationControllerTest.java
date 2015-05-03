@@ -20,5 +20,13 @@ public class MoveFromWasteToFoundationControllerTest {
 		 this.tableau.init();
 		 this.moveFromWasteToFoundationController= new  MoveFromWasteToFoundationController(this.tableau);
 	 }
-
+   
+	@Test
+	public void MoveFromWasteToFoundationControllerTest(){
+		//precondicion: Crata a mover la cima del waste.
+		//se debe saber hacia donde se quiere mover.
+		//Si la carta a mover es un as... debe haber un foundatoons vacio...
+		    //-> waste.size
+		
+	}
 }
