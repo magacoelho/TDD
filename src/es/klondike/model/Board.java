@@ -4,13 +4,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
+import es.klodike.controllers.test.Foundation;
 import es.klondike.utils.Constantes;
 
 
 public class Board {
 
 	private ArrayList<Stack<Card>> allFourColor;
-	private ArrayList<Stack<Card>> foundations;
+	private ArrayList<Foundation> foundations;
 	private Stack<Card> deck;
 	private Stack<Card> waste;
 	private List<Card> fullDeck;
@@ -20,7 +21,7 @@ public class Board {
 	public Board() {
 		super();
 		this.allFourColor= new  ArrayList<Stack<Card>>();
-		this.foundations= new ArrayList<Stack<Card>>();
+		this.foundations= new ArrayList<Foundation>();
 		this.deck= new Stack<Card>();
 		this.waste= new Stack<Card>();
 		this.fullDeck= new ArrayList<Card>();
@@ -35,10 +36,10 @@ public class Board {
 	public void setAllFourColor(ArrayList<Stack<Card>> allFourColor) {
 		this.allFourColor = allFourColor;
 	}
-	public ArrayList<Stack<Card>> getFoundations() {
+	public ArrayList<Foundation> getFoundations() {
 		return foundations;
 	}
-	public void setFoundations(ArrayList<Stack<Card>> foundations) {
+	public void setFoundations(ArrayList<Foundation> foundations) {
 		this.foundations = foundations;
 	}
 	public Stack<Card> getDeck() {
@@ -96,7 +97,7 @@ public class Board {
 	public void initFoundations(){
 		
 			for(int i=0; i<Constantes.NUMBER_FOUNDATIONS;i++){
-			this.foundations.add(new Stack<Card>());
+			  this.foundations.add(new Foundation(new Stack<Card>()));
 			
 		}
 		

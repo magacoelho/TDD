@@ -2,6 +2,8 @@ package es.klodike.controllers.test;
 
 import static org.junit.Assert.*;
 
+import java.util.Stack;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,6 +11,8 @@ import es.klodike.controllers.MoveFromDeckToWasteController;
 import es.klodike.controllers.MoveFromWasteToFoundationController;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
+import es.klondike.model.Suite;
+import es.klondike.utils.Constantes;
 
 public class MoveFromWasteToFoundationControllerTest {
 
@@ -23,9 +27,23 @@ public class MoveFromWasteToFoundationControllerTest {
 	 }
    
 	@Test
-	public void MoveFromWasteToFoundationControllerTest(){
-		Card cardToMove = board.getWaste().peek();
-		assertNotNull(card);
+	public void MoveFromWasteToFoundationEmptyControllerTest(){
+		// mover un as
+		for(Suite suite: Suite.values()){
+			Card card = board.getWaste().push(new Card(suite, 1, Constantes.UNCOVERED_CARD));
+			Foundation foundation = new Foundation(new Stack<Card>(), suite);
+		}
+		for(Suite suite: Suite.values()){
+			for(Suite suiteFoundation: Suite.values()){
+				Card cardToMove= board.getWaste().peek();
+				Suite targetSuite= suiteFoundation;
+				moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardToMove, targetSuite);
+			//	if(suite==suite)
+				 // assertEquals(1, board.getFoundations());
+			} 
+		}
+			
+		
 		//elementos Carta a mover la cima del waste.
 		 // El foundation debe corresponder a la misma Suit
 		// si la carta a mover es un as...debe settearse el foundation como de este Suit

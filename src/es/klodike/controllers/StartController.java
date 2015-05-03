@@ -2,6 +2,7 @@ package es.klodike.controllers;
 import java.util.ArrayList;
 import java.util.Stack;
 
+import es.klodike.controllers.test.Foundation;
 import es.klondike.model.Card;
 import es.klondike.model.Board;
 
@@ -29,7 +30,7 @@ public class StartController {
 	
 	public ArrayList<Integer> getSizeFoundations() {
 		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
-		for (Stack<Card> fundation :  this.board.getFoundations()) {
+		for (Foundation fundation :  this.board.getFoundations()) {
 			sizeFoundations.add(fundation.size());
 		}
 		return sizeFoundations;
