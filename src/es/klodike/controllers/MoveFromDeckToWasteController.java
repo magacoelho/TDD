@@ -12,6 +12,8 @@ public class MoveFromDeckToWasteController {
 
 	public void moveFromDeckToWaste() {
 		
+		tableau.getWaste().push(tableau.getDeck().pop());
+		tableau.getWaste().peek().setCovered(false);
 		
 	}
 
