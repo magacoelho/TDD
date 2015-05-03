@@ -38,8 +38,8 @@ public class MoveFromWasteToFoundationControllerTest {
 				Card cardToMove= board.getWaste().peek();
 				Suite targetSuite= suiteFoundation;
 				moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardToMove, targetSuite);
-			//	if(suite==suite)
-				 // assertEquals(1, board.getFoundations());
+				
+				
 			} 
 		}
 			
