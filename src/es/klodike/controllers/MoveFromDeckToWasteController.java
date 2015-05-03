@@ -7,7 +7,7 @@ public class MoveFromDeckToWasteController {
 
 	private static final boolean COVERED_CARD = true;
 	private static final boolean UNCOVERED_CARD = false;
-	public static final int NUMBER_CARDS_MOVE_DECK_TO_WASTE = 1;
+	public static final int NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE = 1;
 	private Tableau tableau;
 
 	public MoveFromDeckToWasteController(Tableau tableau) {
@@ -15,18 +15,28 @@ public class MoveFromDeckToWasteController {
 	}
 
 	public void moveFromDeckToWaste() {
-		if(tableau.getDeck().size()>=NUMBER_CARDS_MOVE_DECK_TO_WASTE){
-		  tableau.getWaste().push(tableau.getDeck().pop());
-		  tableau.getWaste().peek().setCovered(UNCOVERED_CARD);
+		if(tableau.getDeck().size()>=NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
+		  moveMinimunCardsFromDeckToWaste();
 		}
 		else{
-		   for(Card card: tableau.getWaste()){
+		   moveAllWasteCardsToEmptyDeck();
+	   }
+	}
+
+	private void moveAllWasteCardsToEmptyDeck() {
+		for(Card card: tableau.getWaste()){
 			   card.setCovered(COVERED_CARD);
 		       tableau.getDeck().push(card);
 		      
 	    }
 		   tableau.getWaste().removeAllElements();
-	   }
 	}
+
+	private void moveMinimunCardsFromDeckToWaste() {
+		tableau.getWaste().push(tableau.getDeck().pop());
+		tableau.getWaste().peek().setCovered(UNCOVERED_CARD);
+	}
+	
+	
 
 }
