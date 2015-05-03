@@ -22,5 +22,10 @@ public interface Constantes {
 	public static final boolean COVERED_CARD = true;
 	public static final boolean UNCOVERED_CARD = false;
 	
+	// 
+
+	public static final int NUMBER_EMPTY = 0;
+	
+	
 	
 }

@@ -45,7 +45,7 @@ public class MoveFromDeckToWasteControllerTest {
 	       moveFromDeckToWasteController.moveFromDeckToWaste();
 	       int postSizeDeck=preSizeWaste;
 	       assertEquals(postSizeDeck, tableau.getDeck().size());
-		   assertEquals(0, tableau.getWaste().size());
+		   assertEquals(Constantes.NUMBER_EMPTY, tableau.getWaste().size());
 		   for(int j=0;j<tableau.getDeck().size();j++)
 		       assertTrue(tableau.getDeck().peek().isCovered());
 	      }
