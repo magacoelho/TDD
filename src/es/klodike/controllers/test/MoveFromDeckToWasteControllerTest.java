@@ -20,6 +20,7 @@ public class MoveFromDeckToWasteControllerTest {
 	 public void before(){
 		 moveFromDeckToWasteController= new MoveFromDeckToWasteController();
 		 tableau = new Tableau();
+		 this.tableau.init();
 	 }
 	@Test
 	public void moveFromDeckToWasteTest() {
@@ -37,6 +38,7 @@ public class MoveFromDeckToWasteControllerTest {
 		    // comprobar que waste tiene mas 1 cartas. (y q cambió  de cubiertas=true a cubiertas=false
 		   }
 		   else{
+			   
 		     //comprobar que deck tiene el mismo nuemro de cartas
 		     //comprobar que waste tiene el mismo numero de cartas
 		   }

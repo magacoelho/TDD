@@ -26,7 +26,7 @@ public class Tableau {
 		this.fullDeck= new ArrayList<Card>();
 		this.fullDeckNotRepartida= new ArrayList<Card>();
 
-		this.init();
+		
 	
 	}
 	public ArrayList<Stack<Card>> getAllFourColor() {
@@ -70,7 +70,7 @@ public class Tableau {
    // metodos neescraios ara crear un tablero
 	
 
-	private void init(){
+	public void init(){
 		this.initFullDeck();
 		this.initFoundations();
 		this.initAllFourColours();

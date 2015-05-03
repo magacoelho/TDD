@@ -11,6 +11,7 @@ public class StartController {
 	public StartController() {
 		super();
 		this.tableau= new Tableau();
+		this.tableau.init();
 	}
 	
 	public int sizeWaste() {
