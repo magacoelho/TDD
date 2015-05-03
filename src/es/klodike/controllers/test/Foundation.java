@@ -7,19 +7,24 @@ import es.klondike.model.Suite;
 
 public class Foundation {
 
-	public Foundation(Stack<Card> stack, Suite suite) {
-		// TODO Auto-generated constructor stub
+	private Stack<Card> stackCard;
+	private Suite suite;
+
+
+
+	public Foundation(Stack<Card> stackCard, Suite suite) {
+		this.stackCard= stackCard;
+		this.suite=suite;
 	}
 
-	public Foundation(Stack<Card> stack) {
-		// TODO Auto-generated constructor stub
+	public Foundation(Stack<Card> stackCard) {
+		this.stackCard= stackCard;
 	}
 
 	
 
 	public Integer size() {
-		// TODO Auto-generated method stub
-		return null;
+			return this.stackCard.size();
 	}
 
 	
