@@ -18,9 +18,9 @@ public class MoveFromDeckToWasteControllerTest {
    
 	 @Before
 	 public void before(){
-		 moveFromDeckToWasteController= new MoveFromDeckToWasteController();
-		 tableau = new Tableau();
+		 this.tableau = new Tableau();
 		 this.tableau.init();
+		 this.moveFromDeckToWasteController= new MoveFromDeckToWasteController(this.tableau);
 	 }
 	@Test
 	public void moveFromDeckToWasteTest() {

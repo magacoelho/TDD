@@ -1,10 +1,18 @@
 package es.klodike.controllers;
 
+import es.klondike.model.Tableau;
+
 public class MoveFromDeckToWasteController {
 
-	public boolean moveFromDeckToWaste() {
-		// TODO Auto-generated method stub
-		return true;
+	private Tableau tableau;
+
+	public MoveFromDeckToWasteController(Tableau tableau) {
+		this.tableau= tableau;
+	}
+
+	public void moveFromDeckToWaste() {
+		
+		
 	}
 
 }
