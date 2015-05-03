@@ -11,14 +11,14 @@ import es.klondike.model.Board;
 
 public class MoveFromWasteToFoundationControllerTest {
 
-	 private Board tableau;
+	 private Board board;
 	private MoveFromWasteToFoundationController moveFromWasteToFoundationController;
 
 	@Before
 	 public void before(){
-		 this.tableau = new Board();
-		 this.tableau.init();
-		 this.moveFromWasteToFoundationController= new  MoveFromWasteToFoundationController(this.tableau);
+		 this.board = new Board();
+		 this.board.init();
+		 this.moveFromWasteToFoundationController= new  MoveFromWasteToFoundationController(this.board);
 	 }
    
 	@Test

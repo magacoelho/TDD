@@ -4,10 +4,10 @@ import es.klondike.model.Board;
 
 public class MoveFromWasteToFoundationController {
 
-	private Board tableau;
+	private Board board;
 
-	public MoveFromWasteToFoundationController(Board tableau) {
-		this.tableau= tableau;
+	public MoveFromWasteToFoundationController(Board board) {
+		this.board= board;
 		
 	}
  

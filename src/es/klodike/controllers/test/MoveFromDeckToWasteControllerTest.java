@@ -14,13 +14,13 @@ import es.klondike.utils.Constantes;
 
 public class MoveFromDeckToWasteControllerTest {
    private MoveFromDeckToWasteController moveFromDeckToWasteController;
-   private Board tableau;
+   private Board board;
    
 	 @Before
 	 public void before(){
-		 this.tableau = new Board();
-		 this.tableau.init();
-		 this.moveFromDeckToWasteController= new MoveFromDeckToWasteController(this.tableau);
+		 this.board = new Board();
+		 this.board.init();
+		 this.moveFromDeckToWasteController= new MoveFromDeckToWasteController(this.board);
 	 }
 	@Test
 	public void moveFromDeckToWasteTest() {
@@ -28,26 +28,26 @@ public class MoveFromDeckToWasteControllerTest {
 		
 		  int preSizeWaste;
 	      for(int i=0;i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
-	    	  int preSizeDeck =tableau.getDeck().size();
-	    	  preSizeWaste =tableau.getWaste().size();
+	    	  int preSizeDeck =board.getDeck().size();
+	    	  preSizeWaste =board.getWaste().size();
 		      moveFromDeckToWasteController.moveFromDeckToWaste();
 		     
 		     if(preSizeDeck >= Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
 			    int postSizeDeck = preSizeDeck - Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE;
-				assertEquals(postSizeDeck, tableau.getDeck().size());
+				assertEquals(postSizeDeck, board.getDeck().size());
 			    int postSizeWaste = preSizeWaste + Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE;
-				assertEquals(postSizeWaste, tableau.getWaste().size());
-			    assertFalse(tableau.getWaste().peek().isCovered());
+				assertEquals(postSizeWaste, board.getWaste().size());
+			    assertFalse(board.getWaste().peek().isCovered());
 		   }
           }
 	    	    
-	       preSizeWaste =tableau.getWaste().size();
+	       preSizeWaste =board.getWaste().size();
 	       moveFromDeckToWasteController.moveFromDeckToWaste();
 	       int postSizeDeck=preSizeWaste;
-	       assertEquals(postSizeDeck, tableau.getDeck().size());
-		   assertEquals(Constantes.NUMBER_EMPTY, tableau.getWaste().size());
-		   for(int j=0;j<tableau.getDeck().size();j++)
-		       assertTrue(tableau.getDeck().peek().isCovered());
+	       assertEquals(postSizeDeck, board.getDeck().size());
+		   assertEquals(Constantes.NUMBER_EMPTY, board.getWaste().size());
+		   for(int j=0;j<board.getDeck().size();j++)
+		       assertTrue(board.getDeck().peek().isCovered());
 	      }
 	      
 

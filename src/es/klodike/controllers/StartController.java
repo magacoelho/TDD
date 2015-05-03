@@ -6,29 +6,30 @@ import es.klondike.model.Card;
 import es.klondike.model.Board;
 
 public class StartController {
-	private Board tableau;
+	private Board board;
 	
 	public StartController() {
 		super();
-		this.tableau= new Board();
-		this.tableau.init();
+		this.board= new Board();
+		this.board.init();
 	}
 	
 	public int sizeWaste() {
-		return this.tableau.getWaste().size();
+		
+		return this.board.getWaste().size();
 	}
 	
 	public int sizeDeck() {
-		return this.tableau.getDeck().size();
+		return this.board.getDeck().size();
 	}
 	
 	public int getNumberFoundations() {
-		return this.tableau.getFoundations().size();
+		return this.board.getFoundations().size();
 	}
 	
 	public ArrayList<Integer> getSizeFoundations() {
 		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
-		for (Stack<Card> fundation :  this.tableau.getFoundations()) {
+		for (Stack<Card> fundation :  this.board.getFoundations()) {
 			sizeFoundations.add(fundation.size());
 		}
 		return sizeFoundations;
@@ -37,7 +38,7 @@ public class StartController {
 	public ArrayList<Integer> getSizeFourColurs() {
 		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
 
-		for (Stack<Card> fourColour :this.tableau.getAllFourColor()) {
+		for (Stack<Card> fourColour :this.board.getAllFourColor()) {
 		  	
 		  sizeFourColours.add(fourColour.size());
 		}
@@ -45,28 +46,28 @@ public class StartController {
 	}
 	
 	public Board getTableau() {
-		return this.tableau;
+		return this.board;
 	}
 
 	public ArrayList<Stack<Card>> getAllFourColor() {
-		return this.tableau.getAllFourColor();
+		return this.board.getAllFourColor();
 	}
 
 	public Integer getSizeFullDeck() {
-		return this.tableau.getFullDeck().size();
+		return this.board.getFullDeck().size();
 	}
 
 	public boolean verifyNotRepetedCards() {
 		boolean noRepetidas= true;
-	    for (Card card : this.tableau.getFullDeck()) {
-			if( this.tableau.getFullDeck().lastIndexOf(card)!= this.tableau.getFullDeck().indexOf(card)){
+	    for (Card card : this.board.getFullDeck()) {
+			if( this.board.getFullDeck().lastIndexOf(card)!= this.board.getFullDeck().indexOf(card)){
 				noRepetidas=false;
 				break;
 			}
 		}
-	    for (Stack<Card> stack :this.tableau.getAllFourColor()) {
+	    for (Stack<Card> stack :this.board.getAllFourColor()) {
 			for (Card card : stack) {
-				 for (Stack<Card> stack2 : this.tableau.getAllFourColor()){
+				 for (Stack<Card> stack2 : this.board.getAllFourColor()){
 					 if(stack2.lastIndexOf(card)!=stack2.indexOf(card)){
 						 noRepetidas=false;
 						 break;
@@ -74,8 +75,8 @@ public class StartController {
 				 }
 			}
 		}
-	    for (Card card : this.tableau.getWaste())  {
-	    	if(this.tableau.getWaste().lastIndexOf(card)!=this.tableau.getWaste().indexOf(card)){
+	    for (Card card : this.board.getWaste())  {
+	    	if(this.board.getWaste().lastIndexOf(card)!=this.board.getWaste().indexOf(card)){
 				noRepetidas=false;
 				break;
 			}

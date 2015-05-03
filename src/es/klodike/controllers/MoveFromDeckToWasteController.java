@@ -7,14 +7,14 @@ import es.klondike.utils.Constantes;
 public class MoveFromDeckToWasteController {
 
 
-	private Board tableau;
+	private Board board;
 
-	public MoveFromDeckToWasteController(Board tableau) {
-		this.tableau= tableau;
+	public MoveFromDeckToWasteController(Board board) {
+		this.board= board;
 	}
 
 	public void moveFromDeckToWaste() {
-		if(tableau.getDeck().size()>=Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
+		if(board.getDeck().size()>=Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
 		  moveMinimunCardsFromDeckToWaste();
 		}
 		else{
@@ -23,17 +23,17 @@ public class MoveFromDeckToWasteController {
 	}
 
 	private void moveAllWasteCardsToEmptyDeck() {
-		for(Card card: tableau.getWaste()){
+		for(Card card: board.getWaste()){
 			   card.setCovered(Constantes.COVERED_CARD);
-		       tableau.getDeck().push(card);
+		       board.getDeck().push(card);
 		      
 	    }
-		   tableau.getWaste().removeAllElements();
+		   board.getWaste().removeAllElements();
 	}
 
 	private void moveMinimunCardsFromDeckToWaste() {
-		tableau.getWaste().push(tableau.getDeck().pop());
-		tableau.getWaste().peek().setCovered(Constantes.UNCOVERED_CARD);
+		board.getWaste().push(board.getDeck().pop());
+		board.getWaste().peek().setCovered(Constantes.UNCOVERED_CARD);
 	}
 	
 	
