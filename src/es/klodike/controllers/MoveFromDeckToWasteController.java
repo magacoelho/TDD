@@ -5,6 +5,9 @@ import es.klondike.model.Tableau;
 
 public class MoveFromDeckToWasteController {
 
+	private static final boolean COVERED_CARD = true;
+	private static final boolean UNCOVERED_CARD = false;
+	public static final int NUMBER_CARDS_MOVE_DECK_TO_WASTE = 1;
 	private Tableau tableau;
 
 	public MoveFromDeckToWasteController(Tableau tableau) {
@@ -12,13 +15,13 @@ public class MoveFromDeckToWasteController {
 	}
 
 	public void moveFromDeckToWaste() {
-		if(tableau.getDeck().size()>=1){
+		if(tableau.getDeck().size()>=NUMBER_CARDS_MOVE_DECK_TO_WASTE){
 		  tableau.getWaste().push(tableau.getDeck().pop());
-		  tableau.getWaste().peek().setCovered(false);
+		  tableau.getWaste().peek().setCovered(UNCOVERED_CARD);
 		}
 		else{
 		   for(Card card: tableau.getWaste()){
-			   card.setCovered(true);
+			   card.setCovered(COVERED_CARD);
 		       tableau.getDeck().push(card);
 		      
 	    }
