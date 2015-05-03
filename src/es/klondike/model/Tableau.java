@@ -104,7 +104,7 @@ public class Tableau {
 	
 		for(int i=0;i<Constantes.NUMBER_COLOUR_CARD;i++){
 			for(Colour colour:colours){
-				Card card = new Card(colour,i+1,true);
+				Card card = new Card(colour,i+1,Constantes.COVERED_CARD);
 				this.fullDeck.add(card);
 				fullDeckNotRepartida.add(card);
 			}
@@ -117,11 +117,11 @@ public class Tableau {
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
 				Card card= this.getRandomCard();//ojo aleatoria... y no repetidas.
-				card.setCovered(true);
+				card.setCovered(Constantes.COVERED_CARD);
 				stackCard.push(card);
 			}
 			Card card = this.getRandomCard();
-			card.setCovered(false);
+			card.setCovered(Constantes.UNCOVERED_CARD);
 			stackCard.push(card);
 			allFourColor.add(stackCard);
 		}
