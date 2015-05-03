@@ -11,7 +11,7 @@ import es.klondike.model.Board;
 
 public class MoveFromWasteToFoundationControllerTest {
 
-	 private Board board;
+	private Board board;
 	private MoveFromWasteToFoundationController moveFromWasteToFoundationController;
 
 	@Before
@@ -23,7 +23,7 @@ public class MoveFromWasteToFoundationControllerTest {
    
 	@Test
 	public void MoveFromWasteToFoundationControllerTest(){
-		//precondicion: Crata a mover la cima del waste.
+		//precondicion: Carta a mover la cima del waste.
 		//se debe saber hacia donde se quiere mover.
 		//Si la carta a mover es un as... debe haber un foundatoons vacio...
 		    //-> waste.size
