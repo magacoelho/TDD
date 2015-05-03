@@ -25,26 +25,26 @@ public class MoveFromDeckToWasteControllerTest {
 	@Test
 	public void moveFromDeckToWasteTest() {
 		
-		// comprobara que deck tiene menos 1 cartas
-		// comprobar que waste tiene mas 1 cartas. (y q cambió  de cubiertas=true a cubiertas=false
-		  int sizeWaste;
+		
+		  int preSizeWaste;
 	      for(int i=0;i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
-	    	  int sizeDeck =tableau.getDeck().size();
-	    	  sizeWaste =tableau.getWaste().size();
+	    	  int preSizeDeck =tableau.getDeck().size();
+	    	  preSizeWaste =tableau.getWaste().size();
 		      moveFromDeckToWasteController.moveFromDeckToWaste();
-		     if(sizeDeck>= 1){
-			    assertEquals(sizeDeck-1, tableau.getDeck().size());
-			    assertEquals(sizeWaste+1, tableau.getWaste().size());
+		     
+		     if(preSizeDeck >= Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
+			    int postSizeDeck = preSizeDeck - Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE;
+				assertEquals(postSizeDeck, tableau.getDeck().size());
+			    int postSizeWaste = preSizeWaste + Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE;
+				assertEquals(postSizeWaste, tableau.getWaste().size());
 			    assertFalse(tableau.getWaste().peek().isCovered());
 		   }
           }
-	      // verificar que en el Deck están las cartas del Waste
-	      //comprobar que deck tiene el mismo nuemro de cartas
-	      //comprobar que waste tiene el mismo numero de cartas
-	    
-	       sizeWaste =tableau.getWaste().size();
+	    	    
+	       preSizeWaste =tableau.getWaste().size();
 	       moveFromDeckToWasteController.moveFromDeckToWaste();
-	       assertEquals(sizeWaste, tableau.getDeck().size());
+	       int postSizeDeck=preSizeWaste;
+	       assertEquals(postSizeDeck, tableau.getDeck().size());
 		   assertEquals(0, tableau.getWaste().size());
 		   for(int j=0;j<tableau.getDeck().size();j++)
 		       assertTrue(tableau.getDeck().peek().isCovered());
