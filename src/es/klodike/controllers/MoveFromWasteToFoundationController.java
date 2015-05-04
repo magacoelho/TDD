@@ -13,7 +13,7 @@ public class MoveFromWasteToFoundationController {
 		
 	}
 
-	public void moveCardFromWasteToFoundation(Card cardToMove, Suite targetSuite) {
+	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundation) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -29,19 +29,19 @@ public class MoveFromWasteToFoundationControllerTest {
 	@Test
 	public void MoveFromWasteToFoundationEmptyControllerTest(){
 		// mover un as cuando está desocupada la Foundation
+		int foundationIndex=0;
 		for(Suite suite: Suite.values()){
 			Card card = board.getWaste().push(new Card(suite, 1, Constantes.UNCOVERED_CARD));
-			Foundation foundation = new Foundation(new Stack<Card>(), suite);
+			Foundation targetFoundation = this.board.getFoundations().get(foundationIndex);
+			moveFromWasteToFoundationController.moveCardFromWasteToFoundation(card, foundationIndex);
+			assertEquals(suite, targetFoundation.getSuite());
+			assertEquals(card,targetFoundation.getStackCard().peek());
 		}   
 		 
-		for(Suite suite: Suite.values()){
-			for(Suite suiteFoundation: Suite.values()){
-				Card cardToMove= board.getWaste().peek();
-				Suite targetSuite= suiteFoundation;
-				moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardToMove, targetSuite);
-				} 
+	
+		
 			   
-		}
+	
 		  	
 		
 		//elementos Carta a mover la cima del waste.

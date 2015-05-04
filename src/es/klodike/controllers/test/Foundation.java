@@ -27,6 +27,15 @@ public class Foundation {
 			return this.stackCard.size();
 	}
 
+	public Suite getSuite() {
+		return this.suite;
+	}
+
+	public Stack<Card> getStackCard() {
+		
+		return this.stackCard;
+	}
+
 	
 
 }
