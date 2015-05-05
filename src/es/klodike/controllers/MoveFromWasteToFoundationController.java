@@ -14,7 +14,8 @@ public class MoveFromWasteToFoundationController {
 	}
 
 	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundation) {
-		// TODO Auto-generated method stub
+		board.getFoundations().get(targetFoundation).setSuite(cardToMove.getSuite());
+		board.getFoundations().get(targetFoundation).getStackCard().push(cardToMove);
 		
 	}
  

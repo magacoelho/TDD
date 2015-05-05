@@ -36,6 +36,13 @@ public class Foundation {
 		return this.stackCard;
 	}
 
+	public void setSuite(Suite suite) {
+		this.suite=suite;
+		
+	}
+
+	
+
 	
 
 }

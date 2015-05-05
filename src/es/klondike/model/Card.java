@@ -1,7 +1,7 @@
 package es.klondike.model;
 
 public class Card {
-    private Suite colour;
+    private Suite suite;
     private int number;
     private boolean covered;
     
@@ -9,17 +9,17 @@ public class Card {
     
 	public Card(Suite colour, int number, boolean covered) {
 		super();
-		this.colour = colour;
+		this.suite = colour;
 		this.number = number;
 		this.covered = covered;
 	}
 
-	public Suite getColour() {
-		return colour;
+	public Suite getSuite() {
+		return suite;
 	}
 
-	public void setColour(Suite colour) {
-		this.colour = colour;
+	public void setSuite(Suite suite) {
+		this.suite = suite;
 	}
 
 	public int getNumber() {
