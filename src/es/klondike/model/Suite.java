@@ -5,7 +5,7 @@ public enum Suite {
 	 @Override
 	  public String toString() {
 	    switch(this) {
-	      case SPADE: return "PRIMARIA";
+	      case SPADE: return "SPADE";
 	      case CLUB: return "CLUB";
 	      case DIAMOND: return "DIAMOND";
 	      case HEART: return "HEART";

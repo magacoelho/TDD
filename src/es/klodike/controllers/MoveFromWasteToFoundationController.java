@@ -1,5 +1,6 @@
 package es.klodike.controllers;
 
+import es.klodike.controllers.test.Foundation;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
 import es.klondike.model.Suite;
@@ -17,6 +18,11 @@ public class MoveFromWasteToFoundationController {
 		board.getFoundations().get(targetFoundation).setSuite(cardToMove.getSuite());
 		board.getFoundations().get(targetFoundation).getStackCard().push(cardToMove);
 		
+	}
+
+	public Foundation getFoundation(int i) {
+		
+		return board.getFoundations().get(i);
 	}
  
 }

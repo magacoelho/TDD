@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.Stack;
 
+import javax.management.remote.TargetedNotification;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,47 +35,59 @@ public class MoveFromWasteToFoundationControllerTest {
 		for(Suite suite: Suite.values()){
 			Card card = board.getWaste().push(new Card(suite, 1, Constantes.UNCOVERED_CARD));
 			Foundation targetFoundation = this.board.getFoundations().get(foundationIndex);
+			assertEquals(0,targetFoundation.getStackCard().size());
 			moveFromWasteToFoundationController.moveCardFromWasteToFoundation(card, foundationIndex);
 			assertEquals(suite, targetFoundation.getSuite());
 			assertEquals(card,targetFoundation.getStackCard().peek());
+			assertTrue(targetFoundation.getStackCard().size()==1);
+			foundationIndex++;
 		}   
-		 
-		//elementos Carta a mover la cima del waste.
-		 // El foundation debe corresponder a la misma Suit
-		// si la carta a mover es un as...debe settearse el foundation como de este Suit
-		// y verificar q se ha agregargado
-		 // la cima del foundation debe ser un ordinal menor que la carta a mover 
-		// y verificar q se ha agregado
-		  
-		
-	
+			
 	}
 	@Test
 	public void MoveFromWasteToFoundationControllerTest(){
-		int ordinal=Constantes.ORDINAL_MINIMUN_CARD;
-		do{
+		 int targetFoundationIndex= 0;
+		 Card card;
+		 Card cardNew;
+		 Foundation targetFoundation = null;
+		 int ordinal;
+		 for(Suite suite: Suite.values()){
+			 ordinal=Constantes.ORDINAL_MINIMUN_CARD;
+			 cardNew = board.getWaste().push(new Card(suite, ordinal, Constantes.UNCOVERED_CARD));
+			 moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
+			 targetFoundation = this.board.getFoundations().get(targetFoundationIndex);
+			do{
+			   	ordinal++;
+			   	card=board.getFoundations().get(targetFoundationIndex).getStackCard().peek();
+			   	cardNew = board.getWaste().push(new Card(suite, ordinal, Constantes.UNCOVERED_CARD));
+			    moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
+			    assertTrue(card.getNumber()==board.getFoundations().get(targetFoundationIndex).getStackCard().peek().getNumber()-1);
+			    assertEquals(cardNew,targetFoundation.getStackCard().peek());
+			    assertEquals(suite, targetFoundation.getSuite());
+				}
+			while(ordinal<=Constantes.ORDINAL_MINIMUN_CARD + 2);
+			targetFoundationIndex++;
+		 }
+		 //misma suit ... no consecutivo --> no se debe mover
+		targetFoundationIndex=0;
+		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
+		card=  targetFoundation.getStackCard().peek();
+		cardNew = board.getWaste().push(new Card(Suite.SPADE,6, Constantes.UNCOVERED_CARD));
+		assertEquals(card.getNumber()+1, cardNew.getNumber());
+		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
+		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
+		assertEquals(card, targetFoundation.getStackCard().peek());
+		assertEquals(Suite.SPADE, targetFoundation.getSuite());
 		
-		    Card card = board.getWaste().push(new Card(Suite.DIAMOND, ordinal, Constantes.UNCOVERED_CARD));
-		    int targetFoundationIndex= 0;
-			Foundation targetFoundation = this.board.getFoundations().get(targetFoundationIndex);
-			moveFromWasteToFoundationController.moveCardFromWasteToFoundation(card, targetFoundationIndex);
-		}
-		while(ordinal<=Constantes.ORDINAL_MINIMUN_CARD+2);
-	
-		if(ordinal==Constantes.ORDINAL_MAXIMUN_CARD){
-				card= board.getWaste().push(new Card(Suite.DIAMOND, ordinal+1, Constantes.UNCOVERED_CARD));
-				assertEquals(Suite.DIAMOND, targetFoundation.getSuite());
-				assertEquals(card,targetFoundation.getStackCard().peek());
-				ordinal++;
-			}
-		
-		
-		//elementos Carta a mover la cima del waste.
-		 // El foundation debe corresponder a la misma Suit
-		// si la carta a mover es un as...debe settearse el foundation como de este Suit
-		// y verificar q se ha agregargado
-		 // la cima del foundation debe ser un ordinal menor que la carta a mover 
-		// y verificar q se ha agregado
+		//consucutivo pero diferente Suit-> no se debe mover
+		targetFoundationIndex=0;
+		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
+		card=  targetFoundation.getStackCard().peek();
+		cardNew = board.getWaste().push(new Card(Suite.HEART,5, Constantes.UNCOVERED_CARD));
+		assertEquals(Suite.HEART, targetFoundation.getSuite());
+		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew,targetFoundationIndex);
+		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
+		assertEquals(card, targetFoundation.getStackCard().peek());
 		
 	}
 }
