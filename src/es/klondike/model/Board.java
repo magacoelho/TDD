@@ -105,7 +105,7 @@ public class Board {
 	public void initFullDeck(){
 		Suite[] colours= Suite.values();
 	
-		for(int i=0;i<Constantes.NUMBER_COLOUR_CARD;i++){
+		for(int i=0;i<Constantes.ORDINAL_MAXIMUN_CARD;i++){
 			for(Suite colour:colours){
 				Card card = new Card(colour,i+1,Constantes.COVERED_CARD);
 				this.fullDeck.add(card);

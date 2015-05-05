@@ -6,7 +6,6 @@ public interface Constantes {
 	public static final int NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE = 1;
     //FOURCOLOURS
 	public static final int NUMBER_ALL_FOURCOLOURS = 7;
-	public static final int NUMBER_COLOUR_CARD = 13;
 	
 	public static final int NUMBER_FOUNDATIONS = 4;
 	public static final int NUMBER_CARDS_INITIAL_FOUNDATIONS = 0;
@@ -25,6 +24,9 @@ public interface Constantes {
 	// 
 
 	public static final int NUMBER_EMPTY = 0;
+	public static final int ORDINAL_MINIMUN_CARD = 1;
+	public static final int ORDINAL_MAXIMUN_CARD = 13;
+	
 	
 	
 	
