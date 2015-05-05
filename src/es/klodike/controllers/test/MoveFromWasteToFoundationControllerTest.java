@@ -50,13 +50,24 @@ public class MoveFromWasteToFoundationControllerTest {
 	}
 	@Test
 	public void MoveFromWasteToFoundationControllerTest(){
-		for(int ordinal=Constantes.ORDINAL_MINIMUN_CARD; ordinal<=Constantes.ORDINAL_MAXIMUM_CARD-6){
-		Card card = board.getWaste().push(new Card(Suite.DIAMOND, ordinal, Constantes.UNCOVERED_CARD));
-		Foundation targetFoundation = this.board.getFoundations().get(foundationIndex);
-		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(card, foundationIndex);
-		assertEquals(suite, targetFoundation.getSuite());
-		assertEquals(card,targetFoundation.getStackCard().peek());
+		int ordinal=Constantes.ORDINAL_MINIMUN_CARD;
+		do{
+		
+		    Card card = board.getWaste().push(new Card(Suite.DIAMOND, ordinal, Constantes.UNCOVERED_CARD));
+		    int targetFoundationIndex= 0;
+			Foundation targetFoundation = this.board.getFoundations().get(targetFoundationIndex);
+			moveFromWasteToFoundationController.moveCardFromWasteToFoundation(card, targetFoundationIndex);
 		}
+		while(ordinal<=Constantes.ORDINAL_MINIMUN_CARD+2);
+	
+		if(ordinal==Constantes.ORDINAL_MAXIMUN_CARD){
+				card= board.getWaste().push(new Card(Suite.DIAMOND, ordinal+1, Constantes.UNCOVERED_CARD));
+				assertEquals(Suite.DIAMOND, targetFoundation.getSuite());
+				assertEquals(card,targetFoundation.getStackCard().peek());
+				ordinal++;
+			}
+		
+		
 		//elementos Carta a mover la cima del waste.
 		 // El foundation debe corresponder a la misma Suit
 		// si la carta a mover es un as...debe settearse el foundation como de este Suit
