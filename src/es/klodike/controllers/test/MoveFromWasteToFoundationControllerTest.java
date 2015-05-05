@@ -87,7 +87,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		assertNotEquals(Suite.HEART, targetFoundation.getSuite());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew,targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
-		assertEquals(card, targetFoundation.getStackCard().peek());
+		
 		
 	}
 }

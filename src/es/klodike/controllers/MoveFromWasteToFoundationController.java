@@ -37,5 +37,9 @@ public class MoveFromWasteToFoundationController {
 		
 		return board.getFoundations().get(i);
 	}
+
+	public Card pushCard(Card card, int foundationIndex) {
+		return this.getFoundation(foundationIndex).getStackCard().push(card);
+	}
  
 }
