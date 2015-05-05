@@ -14,10 +14,23 @@ public class MoveFromWasteToFoundationController {
 		
 	}
 
-	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundation) {
-		board.getFoundations().get(targetFoundation).setSuite(cardToMove.getSuite());
-		board.getFoundations().get(targetFoundation).getStackCard().push(cardToMove);
-		
+	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundationIndex) {
+		//validar si el founadtions esta vacio
+		Foundation foundation= this.getFoundation(targetFoundationIndex);
+		if(this.getFoundation(targetFoundationIndex).size()==0){
+			foundation.setSuite(cardToMove.getSuite());
+			foundation.getStackCard().push(cardToMove);
+		}
+		else{
+			 if(cardToMove.getSuite().equals(foundation.getSuite())){
+				 Card cardTop = foundation.getStackCard().peek();
+				 if(cardTop.getNumber() ==cardToMove.getNumber() -1){
+					 foundation.getStackCard().push(cardToMove);
+				 }
+			 }
+			
+			
+		}
 	}
 
 	public Foundation getFoundation(int i) {

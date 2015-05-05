@@ -73,7 +73,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
 		card=  targetFoundation.getStackCard().peek();
 		cardNew = board.getWaste().push(new Card(Suite.SPADE,6, Constantes.UNCOVERED_CARD));
-		assertEquals(card.getNumber()+1, cardNew.getNumber());
+		assertNotEquals(card.getNumber()+1, cardNew.getNumber());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
 		assertEquals(card, targetFoundation.getStackCard().peek());
@@ -84,7 +84,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
 		card=  targetFoundation.getStackCard().peek();
 		cardNew = board.getWaste().push(new Card(Suite.HEART,5, Constantes.UNCOVERED_CARD));
-		assertEquals(Suite.HEART, targetFoundation.getSuite());
+		assertNotEquals(Suite.HEART, targetFoundation.getSuite());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew,targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
 		assertEquals(card, targetFoundation.getStackCard().peek());
