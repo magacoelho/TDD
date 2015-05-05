@@ -38,23 +38,24 @@ public class MoveFromWasteToFoundationControllerTest {
 			assertEquals(card,targetFoundation.getStackCard().peek());
 		}   
 		 
-	
-		
-			   
-	
-		  	
-		
 		//elementos Carta a mover la cima del waste.
 		 // El foundation debe corresponder a la misma Suit
 		// si la carta a mover es un as...debe settearse el foundation como de este Suit
-		// y verificar q se ha agergado
+		// y verificar q se ha agregargado
 		 // la cima del foundation debe ser un ordinal menor que la carta a mover 
 		// y verificar q se ha agregado
 		  
 		
-		//se debe saber hacia donde se quiere mover.
-		//Si la carta a mover es un as... debe haber un foundatoons vacio...
-		    //-> waste.size
+	
+	}
+	@Test
+	public void MoveFromWasteToFoundationControllerTest(){
+		//elementos Carta a mover la cima del waste.
+		 // El foundation debe corresponder a la misma Suit
+		// si la carta a mover es un as...debe settearse el foundation como de este Suit
+		// y verificar q se ha agregargado
+		 // la cima del foundation debe ser un ordinal menor que la carta a mover 
+		// y verificar q se ha agregado
 		
 	}
 }
