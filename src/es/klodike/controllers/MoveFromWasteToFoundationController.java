@@ -4,6 +4,7 @@ import es.klodike.controllers.test.Foundation;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
 import es.klondike.model.Suite;
+import es.klondike.utils.Constantes;
 
 public class MoveFromWasteToFoundationController {
 
@@ -15,11 +16,13 @@ public class MoveFromWasteToFoundationController {
 	}
 
 	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundationIndex) {
-		//validar si el founadtions esta vacio
+
 		Foundation foundation= this.getFoundation(targetFoundationIndex);
-		if(this.getFoundation(targetFoundationIndex).size()==0){
-			foundation.setSuite(cardToMove.getSuite());
-			foundation.getStackCard().push(cardToMove);
+		if(foundation.size()==0){
+			if(cardToMove.getNumber()==Constantes.ORDINAL_MINIMUN_CARD){
+			     foundation.setSuite(cardToMove.getSuite());
+			     foundation.getStackCard().push(cardToMove);
+	        }
 		}
 		else{
 			 if(cardToMove.getSuite().equals(foundation.getSuite())){
