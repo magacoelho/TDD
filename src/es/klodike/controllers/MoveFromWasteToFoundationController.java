@@ -64,5 +64,10 @@ public class MoveFromWasteToFoundationController {
 	public Card pushCard(Card card, int foundationIndex) {
 		return this.getFoundation(foundationIndex).getStackCard().push(card);
 	}
- 
+
+	public Board getBoard() {
+		return this.board;
+	}
+
+	
 }

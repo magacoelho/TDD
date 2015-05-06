@@ -21,8 +21,6 @@ public class Foundation {
 		this.stackCard= stackCard;
 	}
 
-	
-
 	public Integer size() {
 			return this.stackCard.size();
 	}
@@ -39,6 +37,10 @@ public class Foundation {
 	public void setSuite(Suite suite) {
 		this.suite=suite;
 		
+	}
+	
+	public Card getTopCard(){
+		return this.stackCard.peek();
 	}
 
 	
