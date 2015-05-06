@@ -18,22 +18,38 @@ public class MoveFromWasteToFoundationController {
 	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundationIndex) {
 
 		Foundation foundation= this.getFoundation(targetFoundationIndex);
-		if(foundation.size()==0){
-			if(cardToMove.getNumber()==Constantes.ORDINAL_MINIMUN_CARD){
-			     foundation.setSuite(cardToMove.getSuite());
-			     foundation.getStackCard().push(cardToMove);
-	        }
+		if(isEmptyFoundation(foundation)){
+			insertFirstCardIntoFoundation(cardToMove, foundation);
 		}
 		else{
-			 if(cardToMove.getSuite().equals(foundation.getSuite())){
-				 Card cardTop = foundation.getStackCard().peek();
-				 if(cardTop.getNumber() ==cardToMove.getNumber() -1){
-					 foundation.getStackCard().push(cardToMove);
-				 }
-			 }
-			
-			
+			 insertOtherCardIntoFoundation(cardToMove, foundation);
 		}
+	}
+	
+
+	public void insertOtherCardIntoFoundation(Card cardToMove, Foundation foundation) {
+		if(cardToMove.getSuite().equals(foundation.getSuite())){
+			 Card cardTop = foundation.getStackCard().peek();
+			 if(cardTop.getNumber() ==cardToMove.getNumber() -1){
+				 insertCardIntoFoundation(cardToMove, foundation);
+			 }
+		 }
+	}
+
+	public void insertFirstCardIntoFoundation(Card cardToMove,	Foundation foundation) {
+		if(cardToMove.getNumber()==Constantes.ORDINAL_MINIMUN_CARD){
+		     foundation.setSuite(cardToMove.getSuite());
+		     insertCardIntoFoundation(cardToMove, foundation);
+		}
+	}
+
+	public void insertCardIntoFoundation(Card cardToMove, Foundation foundation) {
+		foundation.getStackCard().push(cardToMove);
+	}
+  
+	
+	public boolean isEmptyFoundation(Foundation foundation) {
+		return foundation.size()==0;
 	}
 
 	public Foundation getFoundation(int i) {
