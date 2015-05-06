@@ -29,11 +29,15 @@ public class MoveFromWasteToFoundationController {
 
 	public void insertOtherCardIntoFoundation(Card cardToMove, Foundation foundation) {
 		if(cardToMove.getSuite().equals(foundation.getSuite())){
-			 Card cardTop = foundation.getStackCard().peek();
+			 Card cardTop = getTopCardFoundation(foundation);
 			 if(cardTop.getNumber() ==cardToMove.getNumber() -1){
 				 insertCardIntoFoundation(cardToMove, foundation);
 			 }
 		 }
+	}
+
+	public Card getTopCardFoundation(Foundation foundation) {
+		return foundation.getStackCard().peek();
 	}
 
 	public void insertFirstCardIntoFoundation(Card cardToMove,	Foundation foundation) {
