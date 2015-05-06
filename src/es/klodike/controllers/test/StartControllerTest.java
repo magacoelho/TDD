@@ -85,7 +85,7 @@ public class StartControllerTest {
      
      @Test
      public void getTableau(){
-     	 assertNotNull(startController.getTableau());
+     	 assertNotNull(startController.getBoard());
      }
     
     

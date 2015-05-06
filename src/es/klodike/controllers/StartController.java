@@ -46,7 +46,7 @@ public class StartController {
 		return sizeFourColours;
 	}
 	
-	public Board getTableau() {
+	public Board getBoard() {
 		return this.board;
 	}
 
