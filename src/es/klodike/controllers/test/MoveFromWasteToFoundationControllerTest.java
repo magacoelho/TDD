@@ -13,6 +13,7 @@ import es.klodike.controllers.MoveFromDeckToWasteController;
 import es.klodike.controllers.MoveFromWasteToFoundationController;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
+import es.klondike.model.Foundation;
 import es.klondike.model.Suite;
 import es.klondike.utils.Constantes;
 

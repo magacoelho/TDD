@@ -1,7 +1,7 @@
 package es.klodike.controllers;
 
-import es.klodike.controllers.test.Foundation;
 import es.klondike.model.Board;
+import es.klondike.model.Foundation;
 
 public class KlondikeController {
 

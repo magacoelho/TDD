@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
-import es.klodike.controllers.test.Foundation;
 import es.klondike.utils.Colour;
 import es.klondike.utils.Constantes;
 

@@ -1,9 +1,6 @@
-package es.klodike.controllers.test;
+package es.klondike.model;
 
 import java.util.Stack;
-
-import es.klondike.model.Card;
-import es.klondike.model.Suite;
 
 public class Foundation {
 
