@@ -31,7 +31,6 @@ public class MoveFromWasteToTableauControllerTest {
 	public void moveFromWasteToEmptyTableau(){
 	  // precondiciones waste no vacio y cartadeWaste = 13
 		
-		
 	 // tableau destino_> vacia 
 		int tableauTarget=0;
 		board.getTableaus().get(tableauTarget).clear();
@@ -55,5 +54,18 @@ public class MoveFromWasteToTableauControllerTest {
 		assertEquals(0,this.board.getTableaus().get(tableauTarget).size());
 		}
 	
+	@Test
+	public void moveFromWasteToNotEmptyTableau(){
+		this.board.init();
+		int tableauTarget=0;
+		Card cardToMove =new Card(Suite.CLUB, 2, Constantes.UNCOVERED_CARD);
+		board.getWaste().push(cardToMove);
+		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
+		assertEquals(13, board.getWaste().peek().getNumber());
+		assertTrue(board.getFoundations().get(tableauTarget).size()==0);
+       	moveFromWasteToTableauController.move(tableauTarget);
+		assertEquals(cardToMove, this.board.getTableaus().get(tableauTarget).peek());
+		assertEquals(1,this.board.getTableaus().get(tableauTarget).size());
+	}
         
 }
