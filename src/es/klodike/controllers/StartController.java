@@ -8,9 +8,11 @@ import es.klondike.model.Board;
 public class StartController  extends KlondikeController{
 	public StartController() {
 		super(new Board());
-		this.getBoard().init();
+		
 	}
-	
+	    public void start(){
+	    	this.getBoard().init();	
+	    }
 		public boolean verifyNotRepetedCards() {
 		boolean noRepetidas= true;
 	    for (Card card : this.getBoard().getFullDeck()) {
