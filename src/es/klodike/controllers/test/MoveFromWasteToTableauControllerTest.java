@@ -29,16 +29,13 @@ public class MoveFromWasteToTableauControllerTest {
 	
 	@Test 
 	public void moveFromWasteToEmptyTableau(){
-	  // precondiciones waste no vacio y cartadeWaste = 13
-		
-	 // tableau destino_> vacia 
-		int tableauTarget=0;
+	 	int tableauTarget=0;
 		board.getTableaus().get(tableauTarget).clear();
 		Card cardToMove =new Card(Suite.CLUB, 13, Constantes.UNCOVERED_CARD);
 		board.getWaste().push(cardToMove);
 		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
 		assertEquals(13, board.getWaste().peek().getNumber());
-		assertTrue(board.getFoundations().get(tableauTarget).size()==0);
+		assertTrue(board.getTableaus().get(tableauTarget).size()==0);
        	moveFromWasteToTableauController.move(tableauTarget);
 		assertEquals(cardToMove, this.board.getTableaus().get(tableauTarget).peek());
 		assertEquals(1,this.board.getTableaus().get(tableauTarget).size());
@@ -49,7 +46,7 @@ public class MoveFromWasteToTableauControllerTest {
 		board.getWaste().push(cardToMove);
 		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
 		assertNotEquals(13, board.getWaste().peek().getNumber());
-		assertTrue(board.getFoundations().get(tableauTarget).size()==0);
+		assertTrue(board.getTableaus().get(tableauTarget).size()==0);
        	moveFromWasteToTableauController.move(tableauTarget);
 		assertEquals(0,this.board.getTableaus().get(tableauTarget).size());
 		}
@@ -61,11 +58,13 @@ public class MoveFromWasteToTableauControllerTest {
 		Card cardToMove =new Card(Suite.CLUB, 2, Constantes.UNCOVERED_CARD);
 		board.getWaste().push(cardToMove);
 		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
-		assertEquals(13, board.getWaste().peek().getNumber());
-		assertTrue(board.getFoundations().get(tableauTarget).size()==0);
-       	moveFromWasteToTableauController.move(tableauTarget);
+		assertEquals(2, board.getWaste().peek().getNumber());
+		assertNotEquals(cardToMove.getColour(),this.board.getTableaus().get(tableauTarget).peek().getColour());
+		
+		moveFromWasteToTableauController.move(tableauTarget);
+		
 		assertEquals(cardToMove, this.board.getTableaus().get(tableauTarget).peek());
-		assertEquals(1,this.board.getTableaus().get(tableauTarget).size());
+		assertEquals(2,this.board.getTableaus().get(tableauTarget).size());
 	}
         
 }

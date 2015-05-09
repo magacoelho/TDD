@@ -4,6 +4,9 @@ public class Card {
     private Suite suite;
     private int number;
     private boolean covered;
+    private int colour;
+    
+    
     
     
     
@@ -36,4 +39,17 @@ public class Card {
 	public void setCovered(boolean covered) {
 		this.covered=covered;
 	}
+
+	
+	public boolean isBlackColour() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public int getColour() {
+	
+		return this.colour;
+	}
+
+	
 }
