@@ -1,6 +1,5 @@
 package es.klondike.model;
 
-import es.klondike.utils.Colour;
 
 public class Card {
     private Suite suite;

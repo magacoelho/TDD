@@ -7,11 +7,12 @@ import org.junit.Test;
 
 
 
+
 import es.klodike.controllers.MoveFromWasteToTableauController;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
+import es.klondike.model.Colour;
 import es.klondike.model.Suite;
-import es.klondike.utils.Colour;
 import es.klondike.utils.Constantes;
 
 

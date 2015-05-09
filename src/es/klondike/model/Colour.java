@@ -1,4 +1,4 @@
-package es.klondike.utils;
+package es.klondike.model;
 
 public enum Colour {
        BLACK, RED
