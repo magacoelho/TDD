@@ -31,41 +31,41 @@ public class MoveFromWasteToTableauControllerTest {
 	
 	@Test 
 	public void moveFromWasteToEmptyTableau(){
-	 	int tableauTarget=0;
-		board.getTableaus().get(tableauTarget).clear();
-		Card cardToMove =new Card(Suite.CLUB, 13, Constantes.UNCOVERED_CARD, Colour.BLACK);
+	 	int tableauTargetIndex=0;
+		board.getTableaus().get(tableauTargetIndex).clear();
+		Card cardToMove =new Card(Suite.CLUB, Constantes.ORDINAL_MAXIMUN_CARD, Constantes.UNCOVERED_CARD, Colour.BLACK);
 		board.getWaste().push(cardToMove);
-		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
-		assertEquals(13, board.getWaste().peek().getNumber());
-		assertTrue(board.getTableaus().get(tableauTarget).size()==0);
-       	moveFromWasteToTableauController.move(tableauTarget);
-		assertEquals(cardToMove, this.board.getTableaus().get(tableauTarget).peek());
-		assertEquals(1,this.board.getTableaus().get(tableauTarget).size());
+		assertTrue(board.getTableau(tableauTargetIndex).size()==0);
+       	moveFromWasteToTableauController.move(tableauTargetIndex);
+		assertEquals(cardToMove, this.board.getTableaus().get(tableauTargetIndex).peek());
+		assertEquals(1,this.board.getTableaus().get(tableauTargetIndex).size());
 		
-		tableauTarget=0;
-		board.getTableaus().get(tableauTarget).clear();
+		tableauTargetIndex=0;
+		board.getTableau(tableauTargetIndex).clear();
 		cardToMove =new Card(Suite.CLUB, 12, Constantes.UNCOVERED_CARD,Colour.BLACK);
 		board.getWaste().push(cardToMove);
 		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
-		assertNotEquals(13, board.getWaste().peek().getNumber());
-		assertTrue(board.getTableaus().get(tableauTarget).size()==0);
-       	moveFromWasteToTableauController.move(tableauTarget);
-		assertEquals(0,this.board.getTableaus().get(tableauTarget).size());
+		assertNotEquals(Constantes.ORDINAL_MAXIMUN_CARD, board.getWaste().peek().getNumber());
+		assertTrue(board.getTableau(tableauTargetIndex).size()==0);
+       	moveFromWasteToTableauController.move(tableauTargetIndex);
+		assertEquals(0,this.board.getTableau(tableauTargetIndex).size());
 		}
 	
 	@Test
 	public void moveFromWasteToNotEmptyTableau(){
 		this.board.init();
-		int tableauTarget=0;
+		int tableauTargetIndex=0;
 		Card cardToMove =new Card(Suite.HEART, 3, Constantes.UNCOVERED_CARD, Colour.RED);
 		Card cardTopTableauTarget = new Card(Suite.SPADE, 2, Constantes.UNCOVERED_CARD, Colour.BLACK);
 		board.getWaste().push(cardToMove);
-		board.getTableaus().get(tableauTarget).push(cardTopTableauTarget);
+		board.getTableaus().get(tableauTargetIndex).push(cardTopTableauTarget);
 		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
-		moveFromWasteToTableauController.move(tableauTarget);
-		cardTopTableauTarget = this.board.getTableaus().get(tableauTarget).peek();
-		assertEquals(cardToMove, cardTopTableauTarget);
-		assertEquals(3,this.board.getTableaus().get(tableauTarget).size());
+		Card cardTopTableauTargetOld = this.board.getTableau(tableauTargetIndex).peek();
+		moveFromWasteToTableauController.move(tableauTargetIndex);
+		Card cardTopTableauTargetNew = this.board.getTableau(tableauTargetIndex).peek();
+		assertEquals(cardToMove, cardTopTableauTargetNew);
+		assertTrue(cardTopTableauTargetNew.isConsecutiveNumber(cardTopTableauTargetOld));
+		assertEquals(3,this.board.getTableaus().get(tableauTargetIndex).size());
 	}
         
 }
