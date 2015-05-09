@@ -108,6 +108,7 @@ public class Board {
 		for(int i=0;i<Constantes.ORDINAL_MAXIMUN_CARD;i++){
 			for(Suite suite:suites){
 				Card card = new Card(suite,i+1,Constantes.COVERED_CARD);
+				if()
 				this.fullDeck.add(card);
 				fullDeckNotRepartida.add(card);
 			}

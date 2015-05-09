@@ -1,18 +1,21 @@
 package es.klondike.model;
 
+import es.klondike.utils.Colour;
+
 public class Card {
     private Suite suite;
     private int number;
     private boolean covered;
-    private int colour;
+    private Colour colour;
+
     
     
     
     
     
-	public Card(Suite colour, int number, boolean covered) {
+	public Card(Suite suite, int number, boolean covered) {
 		super();
-		this.suite = colour;
+		this.suite = suite;
 		this.number = number;
 		this.covered = covered;
 	}
@@ -46,8 +49,7 @@ public class Card {
 		return false;
 	}
 
-	public int getColour() {
-	
+	public Object getColour() {
 		return this.colour;
 	}
 
