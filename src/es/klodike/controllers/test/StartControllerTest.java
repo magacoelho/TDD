@@ -42,8 +42,8 @@ public class StartControllerTest {
     
     @Test
     public void getSizeFourColoursTest(){
-    	ArrayList<Integer> sizeFourColours = startController.getBoard().getSizeFourColurs();
-    	assertEquals(Constantes.NUMBER_ALL_FOURCOLOURS, sizeFourColours.size());
+    	ArrayList<Integer> sizeFourColours = startController.getBoard().getSizeTableaus();
+    	assertEquals(Constantes.NUMBER_TABLEAUS, sizeFourColours.size());
     	Integer numberCardsForFourColours= new Integer(0);
     	for(int sizeFourColor: sizeFourColours){
     		numberCardsForFourColours+=sizeFourColor;
@@ -53,13 +53,13 @@ public class StartControllerTest {
     
     @Test
     public void getAllFourColorTest(){
-    	ArrayList<Integer> sizeFourColours = startController.getBoard().getSizeFourColurs();
+    	ArrayList<Integer> sizeFourColours = startController.getBoard().getSizeTableaus();
         	int numberSizeFourColor=0;
      	for(int sizeFourColor: sizeFourColours){
     		assertEquals(numberSizeFourColor+1, sizeFourColor);
     		numberSizeFourColor++;
         }
- 		ArrayList<Stack<Card>> allFourColors= startController.getBoard().getAllFourColor();
+ 		ArrayList<Stack<Card>> allFourColors= startController.getBoard().getTableaus();
    		for (Stack<Card> stack : allFourColors) {
 				assertFalse(stack.empty());
 				assertNotNull(stack.peek());

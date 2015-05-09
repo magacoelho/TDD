@@ -19,9 +19,9 @@ public class StartController  extends KlondikeController{
 				break;
 			}
 		}
-	    for (Stack<Card> stack :this.getBoard().getAllFourColor()) {
+	    for (Stack<Card> stack :this.getBoard().getTableaus()) {
 			for (Card card : stack) {
-				 for (Stack<Card> stack2 : this.getBoard().getAllFourColor()){
+				 for (Stack<Card> stack2 : this.getBoard().getTableaus()){
 					 if(stack2.lastIndexOf(card)!=stack2.indexOf(card)){
 						 noRepetidas=false;
 						 break;

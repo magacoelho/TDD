@@ -10,7 +10,7 @@ import es.klondike.utils.Constantes;
 
 public class Board {
 
-	private ArrayList<Stack<Card>> allFourColor;
+	private ArrayList<Stack<Card>> tableaus;
 	private ArrayList<Foundation> foundations;
 	private Stack<Card> deck;
 	private Stack<Card> waste;
@@ -20,7 +20,7 @@ public class Board {
 	
 	public Board() {
 		super();
-		this.allFourColor= new  ArrayList<Stack<Card>>();
+		this.tableaus= new  ArrayList<Stack<Card>>();
 		this.foundations= new ArrayList<Foundation>();
 		this.deck= new Stack<Card>();
 		this.waste= new Stack<Card>();
@@ -30,11 +30,11 @@ public class Board {
 		
 	
 	}
-	public ArrayList<Stack<Card>> getAllFourColor() {
-		return allFourColor;
+	public ArrayList<Stack<Card>> getTableaus() {
+		return tableaus;
 	}
-	public void setAllFourColor(ArrayList<Stack<Card>> allFourColor) {
-		this.allFourColor = allFourColor;
+	public void setTableaus(ArrayList<Stack<Card>> tableaus) {
+		this.tableaus = tableaus;
 	}
 	public ArrayList<Foundation> getFoundations() {
 		return foundations;
@@ -74,7 +74,7 @@ public class Board {
 	public void init(){
 		this.initFullDeck();
 		this.initFoundations();
-		this.initAllFourColours();
+		this.initTableaus();
 		this.initDeck();
 		
 	}
@@ -103,11 +103,11 @@ public class Board {
 		
 	}
 	public void initFullDeck(){
-		Suite[] colours= Suite.values();
+		Suite[] suites= Suite.values();
 	
 		for(int i=0;i<Constantes.ORDINAL_MAXIMUN_CARD;i++){
-			for(Suite colour:colours){
-				Card card = new Card(colour,i+1,Constantes.COVERED_CARD);
+			for(Suite suite:suites){
+				Card card = new Card(suite,i+1,Constantes.COVERED_CARD);
 				this.fullDeck.add(card);
 				fullDeckNotRepartida.add(card);
 			}
@@ -115,8 +115,8 @@ public class Board {
 	  
 	}
 	
-	public void initAllFourColours(){
-	for(int i=0;i<Constantes.NUMBER_ALL_FOURCOLOURS;i++  ){
+	public void initTableaus(){
+	for(int i=0;i<Constantes.NUMBER_TABLEAUS;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
 				Card card= this.getRandomCard();//ojo aleatoria... y no repetidas.
@@ -126,7 +126,7 @@ public class Board {
 			Card card = this.getRandomCard();
 			card.setCovered(Constantes.UNCOVERED_CARD);
 			stackCard.push(card);
-			allFourColor.add(stackCard);
+			tableaus.add(stackCard);
 		}
 	}
 	
@@ -154,10 +154,10 @@ public int sizeWaste() {
 		return sizeFoundations;
 	}
 	
-	public ArrayList<Integer> getSizeFourColurs() {
+	public ArrayList<Integer> getSizeTableaus() {
 		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
 
-		for (Stack<Card> fourColour :this.getAllFourColor()) {
+		for (Stack<Card> fourColour :this.getTableaus()) {
 		  	
 		  sizeFourColours.add(fourColour.size());
 		}

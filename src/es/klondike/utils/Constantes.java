@@ -5,7 +5,7 @@ public interface Constantes {
 	//Game
 	public static final int NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE = 1;
     //FOURCOLOURS
-	public static final int NUMBER_ALL_FOURCOLOURS = 7;
+	public static final int NUMBER_TABLEAUS = 7;
 	
 	public static final int NUMBER_FOUNDATIONS = 4;
 	public static final int NUMBER_CARDS_INITIAL_FOUNDATIONS = 0;
