@@ -3,16 +3,12 @@ package es.klodike.controllers;
 import es.klodike.controllers.test.Foundation;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
-import es.klondike.model.Suite;
 import es.klondike.utils.Constantes;
 
-public class MoveFromWasteToFoundationController {
-
-	private Board board;
+public class MoveFromWasteToFoundationController extends KlondikeController {
 
 	public MoveFromWasteToFoundationController(Board board) {
-		this.board= board;
-		
+		super(board);
 	}
 
 	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundationIndex) {
@@ -27,11 +23,6 @@ public class MoveFromWasteToFoundationController {
 		}
 	}
 	
-
-	public boolean isEmptyWaste() {
-		// TODO Auto-generated method stub
-		return board.getWaste().size()==0;
-	}
 
 	public void insertOtherCardIntoFoundation(Card cardToMove, Foundation foundation) {
 		if(cardToMove.getSuite().equals(foundation.getSuite())){
@@ -58,20 +49,8 @@ public class MoveFromWasteToFoundationController {
 	}
   
 	
-	public boolean isEmptyFoundation(Foundation foundation) {
-		return foundation.size()==0;
-	}
-
-	public Foundation getFoundation(int i) {
-		return board.getFoundations().get(i);
-	}
-
 	public Card pushCard(Card card, int foundationIndex) {
 		return this.getFoundation(foundationIndex).getStackCard().push(card);
-	}
-
-	public Board getBoard() {
-		return this.board;
 	}
 
 	

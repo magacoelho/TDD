@@ -130,5 +130,44 @@ public class Board {
 		}
 	}
 	
+// getters
+public int sizeWaste() {
+		
+	return this.getWaste().size();
+	}
+	
+	public int sizeDeck() {
+		return this.getDeck().size();
+	}
+	
+	
+	
+	public int getNumberFoundations() {
+		return this.getFoundations().size();
+	}
+	
+	public ArrayList<Integer> getSizeFoundations() {
+		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
+		for (Foundation fundation :  this.getFoundations()) {
+			sizeFoundations.add(fundation.size());
+		}
+		return sizeFoundations;
+	}
+	
+	public ArrayList<Integer> getSizeFourColurs() {
+		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
+
+		for (Stack<Card> fourColour :this.getAllFourColor()) {
+		  	
+		  sizeFourColours.add(fourColour.size());
+		}
+		return sizeFourColours;
+	}
+	
+	public Integer getSizeFullDeck() {
+		return this.getFullDeck().size();
+	}
+
+	
 	 
 }
