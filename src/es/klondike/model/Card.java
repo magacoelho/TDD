@@ -57,6 +57,9 @@ public class Card {
 	public void setColour(Colour colour) {
 		this.colour= colour;
 	}
-
+    
+	public boolean isConsecutiveNumber(Card card){
+		return this.getNumber()==card.getNumber()+1;
+	}
 	
 }

@@ -4,6 +4,7 @@ import java.util.Stack;
 
 import es.klondike.model.Board;
 import es.klondike.model.Card;
+import es.klondike.utils.Constantes;
 
 public class MoveFromWasteToTableauController  extends KlondikeController{
 
@@ -31,13 +32,14 @@ public class MoveFromWasteToTableauController  extends KlondikeController{
 	private boolean isValidMoveFromNotEmptyTableau(Stack<Card> tableauTarget,
 			Card cardTopWaste) {
 		return tableauTarget.size()!=0&& 
-		   (cardTopWaste.getNumber()==tableauTarget.peek().getNumber() +1)
+		   (cardTopWaste.isConsecutiveNumber(tableauTarget.peek()))
 		    &&cardTopWaste.getColour()!= tableauTarget.peek().getColour();
 	}
 
 	private boolean isValidMoveForEmptyTableau(Stack<Card> tableauTarget,
 			Card cardTopWaste) {
-		return cardTopWaste.getNumber()==13&&tableauTarget.size()==0;
+		return cardTopWaste.getNumber()==Constantes.ORDINAL_MAXIMUN_CARD
+				&&tableauTarget.size()==0;
 	}
 
 	
