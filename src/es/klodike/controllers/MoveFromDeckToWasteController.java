@@ -4,17 +4,15 @@ import es.klondike.model.Card;
 import es.klondike.model.Board;
 import es.klondike.utils.Constantes;
 
-public class MoveFromDeckToWasteController {
+public class MoveFromDeckToWasteController extends KlondikeController{
 
-
-	private Board board;
 
 	public MoveFromDeckToWasteController(Board board) {
-		this.board= board;
+		super(board);
 	}
 
 	public void moveFromDeckToWaste() {
-		if(board.getDeck().size()>=Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
+		if(this.getBoard().getDeck().size()>=Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
 		  moveMinimunCardsFromDeckToWaste();
 		}
 		else{
@@ -23,17 +21,17 @@ public class MoveFromDeckToWasteController {
 	}
 
 	private void moveAllWasteCardsToEmptyDeck() {
-		for(Card card: board.getWaste()){
+		for(Card card: this.getBoard().getWaste()){
 			   card.setCovered(Constantes.COVERED_CARD);
-		       board.getDeck().push(card);
+			   this.getBoard().getDeck().push(card);
 		      
 	    }
-		   board.getWaste().removeAllElements();
+		this.getBoard().getWaste().removeAllElements();
 	}
 
 	private void moveMinimunCardsFromDeckToWaste() {
-		board.getWaste().push(board.getDeck().pop());
-		board.getWaste().peek().setCovered(Constantes.UNCOVERED_CARD);
+		this.getBoard().getWaste().push(this.getBoard().getDeck().pop());
+		this.getBoard().getWaste().peek().setCovered(Constantes.UNCOVERED_CARD);
 	}
 	
 	
