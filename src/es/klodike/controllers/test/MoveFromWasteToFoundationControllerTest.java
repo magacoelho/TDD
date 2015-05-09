@@ -55,6 +55,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		 for(Suite suite: Suite.values()){
 			 ordinal=Constantes.ORDINAL_MINIMUN_CARD;
 			 cardNew = board.getWaste().push(new Card(suite, ordinal, Constantes.UNCOVERED_CARD));
+			 assertFalse(moveFromWasteToFoundationController.isEmptyWaste());
 			 moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
 			 targetFoundation =moveFromWasteToFoundationController.getFoundation(targetFoundationIndex);
 			do{
@@ -76,6 +77,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
 		card=  moveFromWasteToFoundationController.getTopCardFoundation(targetFoundation);
 		cardNew = board.getWaste().push(new Card(Suite.SPADE,6, Constantes.UNCOVERED_CARD));
+		assertFalse(moveFromWasteToFoundationController.isEmptyWaste());
 		assertNotEquals(card.getNumber()+1, cardNew.getNumber());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
@@ -87,6 +89,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
 		card=  moveFromWasteToFoundationController.getTopCardFoundation(targetFoundation);
 		cardNew = board.getWaste().push(new Card(Suite.CLUB,6, Constantes.UNCOVERED_CARD));
+		assertFalse(moveFromWasteToFoundationController.isEmptyWaste());
 		assertNotEquals(card.getNumber()+1, cardNew.getNumber());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
@@ -98,6 +101,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
 		card=   moveFromWasteToFoundationController.getTopCardFoundation(targetFoundation);
 		cardNew = board.getWaste().push(new Card(Suite.HEART,5, Constantes.UNCOVERED_CARD));
+		assertFalse(moveFromWasteToFoundationController.isEmptyWaste());
 		assertNotEquals(Suite.HEART, targetFoundation.getSuite());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew,targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());
@@ -106,6 +110,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		targetFoundation = moveFromWasteToFoundationController.getFoundation(targetFoundationIndex); 
 		card=   moveFromWasteToFoundationController.getTopCardFoundation(targetFoundation);
 		cardNew = board.getWaste().push(new Card(Suite.HEART,5, Constantes.UNCOVERED_CARD));
+		assertFalse(moveFromWasteToFoundationController.isEmptyWaste());
 		assertNotEquals(Suite.HEART, targetFoundation.getSuite());
 		moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew,targetFoundationIndex);
 		assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber());

@@ -18,6 +18,7 @@ public class MoveFromWasteToFoundationController {
 	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundationIndex) {
 
 		Foundation foundation= this.getFoundation(targetFoundationIndex);
+		if(!isEmptyWaste())
 		if(isEmptyFoundation(foundation)){
 			insertFirstCardIntoFoundation(cardToMove, foundation);
 		}
@@ -26,6 +27,11 @@ public class MoveFromWasteToFoundationController {
 		}
 	}
 	
+
+	public boolean isEmptyWaste() {
+		// TODO Auto-generated method stub
+		return board.getWaste().size()==0;
+	}
 
 	public void insertOtherCardIntoFoundation(Card cardToMove, Foundation foundation) {
 		if(cardToMove.getSuite().equals(foundation.getSuite())){
@@ -57,7 +63,6 @@ public class MoveFromWasteToFoundationController {
 	}
 
 	public Foundation getFoundation(int i) {
-		
 		return board.getFoundations().get(i);
 	}
 
