@@ -20,6 +20,13 @@ public class Card {
 		this.covered = covered;
 	}
 
+	public Card(Suite suite, int number, boolean covered, Colour colour) {
+		this.suite = suite;
+		this.number = number;
+		this.covered = covered;
+		this.colour=colour;
+	}
+
 	public Suite getSuite() {
 		return suite;
 	}
@@ -43,14 +50,12 @@ public class Card {
 		this.covered=covered;
 	}
 
-	
-	public boolean isBlackColour() {
-		// TODO Auto-generated method stub
-		return false;
+	public Colour getColour() {
+		return this.colour;
 	}
 
-	public Object getColour() {
-		return this.colour;
+	public void setColour(Colour colour) {
+		this.colour= colour;
 	}
 
 	

@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Stack;
 
 import es.klodike.controllers.test.Foundation;
+import es.klondike.utils.Colour;
 import es.klondike.utils.Constantes;
 
 
@@ -108,7 +109,14 @@ public class Board {
 		for(int i=0;i<Constantes.ORDINAL_MAXIMUN_CARD;i++){
 			for(Suite suite:suites){
 				Card card = new Card(suite,i+1,Constantes.COVERED_CARD);
-				if()
+				switch(suite){
+				case CLUB:
+				case SPADE: card.setColour(Colour.BLACK);
+		                     break; 
+				case HEART:
+				case DIAMOND:card.setColour(Colour.RED);
+					        break;
+				}
 				this.fullDeck.add(card);
 				fullDeckNotRepartida.add(card);
 			}
