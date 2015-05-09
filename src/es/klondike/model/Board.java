@@ -85,6 +85,7 @@ public class Board {
 			this.deck.push(card);
 		}
 		}
+	
 
 	private Card getRandomCard() {
 		Random r = new Random();
@@ -177,6 +178,8 @@ public int sizeWaste() {
 		return this.getFullDeck().size();
 	}
 
-	
+	public Stack<Card> getTableau(int tableauTargetIndex) {
+		return this.getTableaus().get(tableauTargetIndex);
+	}
 	 
 }
