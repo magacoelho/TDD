@@ -13,9 +13,9 @@ public class MoveFromWasteToFoundationController extends KlondikeController {
 
 	public void moveCardFromWasteToFoundation(Card cardToMove, int targetFoundationIndex) {
 
-		Foundation foundation= this.getFoundation(targetFoundationIndex);
-		if(!isEmptyWaste())
-		if(isEmptyFoundation(foundation)){
+		Foundation foundation= this.getBoard().getFoundation(targetFoundationIndex);
+		if(!this.getBoard().isEmptyWaste())
+		if(this.getBoard().isEmptyFoundation(foundation)){
 			insertFirstCardIntoFoundation(cardToMove, foundation);
 		}
 		else{
@@ -50,7 +50,7 @@ public class MoveFromWasteToFoundationController extends KlondikeController {
   
 	
 	public Card pushCard(Card card, int foundationIndex) {
-		return this.getFoundation(foundationIndex).getStackCard().push(card);
+		return this.getBoard().getFoundation(foundationIndex).getStackCard().push(card);
 	}
 
 	

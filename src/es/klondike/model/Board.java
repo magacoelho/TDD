@@ -180,5 +180,17 @@ public int sizeWaste() {
 	public Stack<Card> getTableau(int tableauTargetIndex) {
 		return this.getTableaus().get(tableauTargetIndex);
 	}
-	 
+	public boolean isEmptyWaste() {
+		return this.getWaste().size()==0;
+	}
+
+	public boolean isEmptyFoundation(Foundation foundation) {
+		return foundation.size()==0;
+	}
+
+	public Foundation getFoundation(int i) {
+		return this.getFoundations().get(i);
+	}
+
+	
 }

@@ -44,7 +44,7 @@ public class MoveFromWasteToTableauControllerTest {
 		board.getTableau(tableauTargetIndex).clear();
 		cardToMove =new Card(Suite.CLUB, 12, Constantes.UNCOVERED_CARD,Colour.BLACK);
 		board.getWaste().push(cardToMove);
-		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
+		assertFalse(board.isEmptyWaste());
 		assertNotEquals(Constantes.ORDINAL_MAXIMUN_CARD, board.getWaste().peek().getNumber());
 		assertTrue(board.getTableau(tableauTargetIndex).size()==0);
        	moveFromWasteToTableauController.move(tableauTargetIndex);
@@ -59,7 +59,7 @@ public class MoveFromWasteToTableauControllerTest {
 		Card cardTopTableauTarget = new Card(Suite.SPADE, 2, Constantes.UNCOVERED_CARD, Colour.BLACK);
 		board.getWaste().push(cardToMove);
 		board.getTableaus().get(tableauTargetIndex).push(cardTopTableauTarget);
-		assertFalse(moveFromWasteToTableauController.isEmptyWaste());
+		assertFalse(board.isEmptyWaste());
 		Card cardTopTableauTargetOld = this.board.getTableau(tableauTargetIndex).peek();
 		moveFromWasteToTableauController.move(tableauTargetIndex);
 		Card cardTopTableauTargetNew = this.board.getTableau(tableauTargetIndex).peek();

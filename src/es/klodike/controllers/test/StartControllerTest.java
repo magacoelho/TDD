@@ -19,6 +19,7 @@ public class StartControllerTest {
 	public void before(){
 		
 		startController = new StartController();
+		startController.start();
 	}
     @Test
     public void sizeDeckTest(){
