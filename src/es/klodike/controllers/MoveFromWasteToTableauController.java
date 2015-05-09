@@ -12,11 +12,14 @@ public class MoveFromWasteToTableauController  extends KlondikeController{
 	}
 
 	public void move(int tableauTargetIndex) {
-		Card cardTopWaste =this.getBoard().getWaste().peek();
-		Stack<Card> tableauTarget =   this.getBoard().getTableaus().get(tableauTargetIndex);
-	    tableauTarget.push(cardTopWaste);
-	    this.getBoard().getWaste().pop();
-		
+		if(this.getBoard().getWaste().size()>0){
+			Card cardTopWaste =this.getBoard().getWaste().peek();
+			if(cardTopWaste.getNumber()==13){
+			Stack<Card> tableauTarget =   this.getBoard().getTableaus().get(tableauTargetIndex);
+		    tableauTarget.push(cardTopWaste);
+		    this.getBoard().getWaste().pop();
+		    }
+		}
 	}
 
 	

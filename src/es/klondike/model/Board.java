@@ -129,7 +129,7 @@ public class Board {
 			tableaus.add(stackCard);
 		}
 	}
-	
+
 // getters
 public int sizeWaste() {
 		
