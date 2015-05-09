@@ -10,6 +10,7 @@ import es.klondike.model.Board;
 
 public class MoveFromWasteToTableauControllerTest {
 	private MoveFromWasteToTableauController moveFormWasteToTableauController;
+	private Board board;
 
 
 	@Before
