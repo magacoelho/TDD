@@ -23,7 +23,7 @@ public class Board {
 		this.waste= new Stack<Card>();
 		this.fullDeck= new ArrayList<Card>();
 		this.fullDeckNotRepartida= new ArrayList<Card>();
-    
+        this.init();
 	}
 
 // getters adn setters
@@ -113,7 +113,7 @@ public class Board {
 	}
 
 
-   // metodos neescraios ara crear un tablero
+   // metodos neescraios para crear un tablero
 	
 
 	public void init(){
@@ -125,21 +125,9 @@ public class Board {
 	}
 	public void initDeck() {
 		for(int i=0; i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
-//			Card card=this.getRandomCard();
-//			this.deck.push(card);
 		}
 		}
 	
-
-	private Card getRandomCard() {
-		Random r = new Random();
-		int ordinalFulDeck=0;
-		if(this.fullDeckNotRepartida.size()>1)
-			ordinalFulDeck= r.nextInt(this.fullDeckNotRepartida.size()-1);
-		Card card= this.fullDeckNotRepartida.get(ordinalFulDeck);
-		this.fullDeckNotRepartida.remove(ordinalFulDeck);
-		return card;
-	}
 
 	public void initFoundations(){
 		
@@ -173,14 +161,6 @@ public class Board {
 	public void initTableaus(){
 	for(int i=0;i<Constantes.NUMBER_TABLEAUS;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
-//			for(int j=0;j<i;j++){
-//				Card card= this.getRandomCard();
-//				card.setCovered(Constantes.COVERED_CARD);
-//				stackCard.push(card);
-//			}
-//			Card card = this.getRandomCard();
-//			card.setCovered(Constantes.UNCOVERED_CARD);
-//			stackCard.push(card);
 			tableaus.add(stackCard);
 		}
 	}

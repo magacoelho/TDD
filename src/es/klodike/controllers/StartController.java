@@ -18,8 +18,7 @@ public class StartController  extends KlondikeController{
 		
 	}
 	    public void start(){
-	    	this.getBoard().init();	
-	        this.initDeck();
+	    	this.initDeck();
 	        this.initTableaus();
 	    	
 	    }
