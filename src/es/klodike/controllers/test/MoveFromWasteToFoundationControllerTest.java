@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import es.klodike.controllers.MoveFromWasteToFoundationController;
+import es.klodike.controllers.StartController;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
 import es.klondike.model.Foundation;
@@ -18,9 +20,9 @@ public class MoveFromWasteToFoundationControllerTest {
 
 	@Before
 	 public void before(){
-		 this.board = new Board();
-		 this.board.init();
-		 this.moveFromWasteToFoundationController= new  MoveFromWasteToFoundationController(this.board);
+		 StartController start = new StartController();
+		 start.start();
+		 this.moveFromWasteToFoundationController= new  MoveFromWasteToFoundationController(start.getBoard());
 		 this.board= moveFromWasteToFoundationController.getBoard();
 	 }
    

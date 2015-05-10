@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.klodike.controllers.MoveFromDeckToWasteController;
+import es.klodike.controllers.StartController;
 import es.klondike.model.Board;
 import es.klondike.utils.Constantes;
 
@@ -18,9 +19,10 @@ public class MoveFromDeckToWasteControllerTest {
    
 	 @Before
 	 public void before(){
-		 this.board = new Board();
-		 this.board.init();
-		 this.moveFromDeckToWasteController= new MoveFromDeckToWasteController(this.board);
+		 StartController start = new StartController();
+		 start.start();
+		 this.moveFromDeckToWasteController= new MoveFromDeckToWasteController(start.getBoard());
+		 this.board= moveFromDeckToWasteController.getBoard();
 	 }
 	@Test
 	public void moveFromDeckToWasteTest() {
