@@ -26,21 +26,18 @@ public class MoveFromDeckToWasteControllerTest {
 	 }
 	@Test
 	public void moveFromDeckToWasteTest() {
-		
-		
 		  int preSizeWaste;
 	      for(int i=0;i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
 	    	  int preSizeDeck =board.getDeck().size();
 	    	  preSizeWaste =board.getWaste().size();
 		      moveFromDeckToWasteController.moveFromDeckToWaste();
-		     
-		     if(preSizeDeck >= Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
+	 	     if(preSizeDeck >= Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE){
 			    int postSizeDeck = preSizeDeck - Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE;
 				assertEquals(postSizeDeck, board.getDeck().size());
 			    int postSizeWaste = preSizeWaste + Constantes.NUMBER_MINIMUM_CARDS_MOVE_DECK_TO_WASTE;
 				assertEquals(postSizeWaste, board.getWaste().size());
 			    assertFalse(board.getWaste().peek().isCovered());
-		   }
+		     }
           }
 	    	    
 	       preSizeWaste =board.getWaste().size();
@@ -50,8 +47,5 @@ public class MoveFromDeckToWasteControllerTest {
 		   assertEquals(Constantes.NUMBER_EMPTY, board.getWaste().size());
 		   for(int j=0;j<board.getDeck().size();j++)
 		       assertTrue(board.getDeck().peek().isCovered());
-	      }
-	      
-
-
+	   }
 }

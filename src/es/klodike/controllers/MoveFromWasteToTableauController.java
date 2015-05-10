@@ -23,8 +23,7 @@ public class MoveFromWasteToTableauController  extends KlondikeController{
 			}
 		}
 	
-	private boolean isValidMoveFromTableau(Stack<Card> tableauTarget,Card cardTopWaste)
-	{
+	private boolean isValidMoveFromTableau(Stack<Card> tableauTarget,Card cardTopWaste){
 		return isValidMoveForEmptyTableau(tableauTarget, cardTopWaste)
 				||isValidMoveFromNotEmptyTableau(tableauTarget,cardTopWaste);
 	}
@@ -41,7 +40,5 @@ public class MoveFromWasteToTableauController  extends KlondikeController{
 		return cardTopWaste.getNumber()==Constantes.ORDINAL_MAXIMUN_CARD
 				&&tableauTarget.size()==0;
 	}
-
-	
-	}
+}
 

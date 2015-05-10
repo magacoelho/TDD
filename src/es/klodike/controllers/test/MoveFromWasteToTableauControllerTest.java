@@ -5,10 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-
-
-
-
 import es.klodike.controllers.MoveFromWasteToTableauController;
 import es.klodike.controllers.StartController;
 import es.klondike.model.Board;
@@ -22,21 +18,16 @@ import es.klondike.utils.Constantes;
 public class MoveFromWasteToTableauControllerTest {
 	private MoveFromWasteToTableauController moveFromWasteToTableauController;
 	private Board board;
-
-
 	@Before
 	public void before(){
 		 StartController start = new StartController();
 		 start.start();
 		 moveFromWasteToTableauController = new MoveFromWasteToTableauController(start.getBoard()); 
 		 this.board = moveFromWasteToTableauController.getBoard();
-		
-		
 	}
 	
 	@Test 
 	public void moveFromWasteToEmptyTableau(){
-	 	
 		int tableauTargetIndex=0;
 		board.getTableaus().get(tableauTargetIndex).clear();
 		Card cardToMove =new Card(Suite.CLUB, Constantes.ORDINAL_MAXIMUN_CARD, Constantes.UNCOVERED_CARD, Colour.BLACK);
@@ -59,7 +50,6 @@ public class MoveFromWasteToTableauControllerTest {
 	
 	@Test
 	public void moveFromWasteToNotEmptyTableau(){
-		
 		int tableauTargetIndex=0;
 		Card cardToMove =new Card(Suite.HEART, 3, Constantes.UNCOVERED_CARD, Colour.RED);
 		Card cardTopTableauTarget = new Card(Suite.SPADE, 2, Constantes.UNCOVERED_CARD, Colour.BLACK);

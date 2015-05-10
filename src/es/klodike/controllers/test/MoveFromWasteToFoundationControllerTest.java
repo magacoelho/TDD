@@ -59,9 +59,7 @@ public class MoveFromWasteToFoundationControllerTest {
 			   	ordinal++;
 			   	card=moveFromWasteToFoundationController.getTopCardFoundation(targetFoundation);
 			   	cardNew = board.getWaste().push(new Card(suite, ordinal, Constantes.UNCOVERED_CARD));
-			   	
 			    moveFromWasteToFoundationController.moveCardFromWasteToFoundation(cardNew, targetFoundationIndex);
-			    
 			    assertTrue(card.getNumber()==targetFoundation.getStackCard().peek().getNumber()-1);
 			    assertEquals(cardNew,targetFoundation.getStackCard().peek());
 			    assertEquals(suite, targetFoundation.getSuite());

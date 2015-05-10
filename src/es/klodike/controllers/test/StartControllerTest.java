@@ -15,10 +15,10 @@ import es.klondike.utils.Constantes;
 public class StartControllerTest {
   
 	private  StartController startController;
+	
 	@Before
 	public void before(){
-		
-		startController = new StartController();
+			startController = new StartController();
 		startController.start();
 	}
     @Test
@@ -49,7 +49,7 @@ public class StartControllerTest {
     	for(int sizeFourColor: sizeTableaus){
     		numberCardsForFourColours+=sizeFourColor;
     	}
-    	assertEquals(new Integer(Constantes.NUMBER_TOTAL_INITIAL_CARDS_FOURCOLOUR), numberCardsForFourColours);
+    	assertEquals(new Integer(Constantes.NUMBER_TOTAL_INITIAL_CARDS_TABLEAU), numberCardsForFourColours);
     }
     
     @Test
@@ -88,6 +88,5 @@ public class StartControllerTest {
      public void getBoardTest(){
      	 assertNotNull(startController.getBoard());
      }
-    
     
 }

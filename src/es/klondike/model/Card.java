@@ -7,12 +7,7 @@ public class Card {
     private boolean covered;
     private Colour colour;
 
-    
-    
-    
-    
-    
-	public Card(Suite suite, int number, boolean covered) {
+ public Card(Suite suite, int number, boolean covered) {
 		super();
 		this.suite = suite;
 		this.number = number;
@@ -60,5 +55,4 @@ public class Card {
 	public boolean isConsecutiveNumber(Card card){
 		return this.getNumber()==card.getNumber()+1;
 	}
-	
 }

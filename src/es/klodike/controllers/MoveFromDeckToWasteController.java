@@ -24,8 +24,7 @@ public class MoveFromDeckToWasteController extends KlondikeController{
 		for(Card card: this.getBoard().getWaste()){
 			   card.setCovered(Constantes.COVERED_CARD);
 			   this.getBoard().getDeck().push(card);
-		      
-	    }
+	   }
 		this.getBoard().getWaste().removeAllElements();
 	}
 
@@ -33,7 +32,4 @@ public class MoveFromDeckToWasteController extends KlondikeController{
 		this.getBoard().getWaste().push(this.getBoard().getDeck().pop());
 		this.getBoard().getWaste().peek().setCovered(Constantes.UNCOVERED_CARD);
 	}
-	
-	
-
 }

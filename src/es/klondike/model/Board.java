@@ -14,6 +14,7 @@ public class Board {
 	private Stack<Card> deck;
 	private Stack<Card> waste;
 	private List<Card> fullDeck;
+	private List<Card> fullDeckNotRepartida;
 
 	public Board() {
 		super();
@@ -30,9 +31,11 @@ public class Board {
 	public int sizeWaste() {	
 		return this.getWaste().size();
 	}
+	
 	public int sizeDeck() {
 		return this.getDeck().size();
 	}
+	
 	public int getNumberFoundations() {
 		return this.getFoundations().size();
 	}
@@ -47,9 +50,7 @@ public class Board {
 	
 	public ArrayList<Integer> getSizeTableaus() {
 		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
-		
 		for (Stack<Card> fourColour :this.getTableaus()) {
-			
 			sizeFourColours.add(fourColour.size());
 		}
 		return sizeFourColours;
@@ -73,7 +74,6 @@ public class Board {
 	public Foundation getFoundation(int i) {
 		return this.getFoundations().get(i);
 	}
-	private List<Card> fullDeckNotRepartida;
 
 	public ArrayList<Stack<Card>> getTableaus() {
 		return tableaus;
@@ -112,34 +112,20 @@ public class Board {
 		this.fullDeckNotRepartida = fullDeckNotRepartida;
 	}
 
-
-   // metodos neescraios para crear un tablero
-	
-
+	// metodos neescraios para crear un tablero VACÍO
 	public void init(){
 		this.initFullDeck();
 		this.initFoundations();
 		this.initTableaus();
-		this.initDeck();
-		
 	}
-	public void initDeck() {
-		for(int i=0; i<Constantes.NUMBER_CARDS_DECK_INITIAL;i++){
-		}
-		}
-	
 
 	public void initFoundations(){
-		
-			for(int i=0; i<Constantes.NUMBER_FOUNDATIONS;i++){
-			  this.foundations.add(new Foundation(new Stack<Card>()));
-			
-		}
-		
+	 for(int i=0; i<Constantes.NUMBER_FOUNDATIONS;i++){
+	  this.foundations.add(new Foundation(new Stack<Card>()));
+	 }
 	}
 	public void initFullDeck(){
 		Suite[] suites= Suite.values();
-	
 		for(int i=0;i<Constantes.ORDINAL_MAXIMUN_CARD;i++){
 			for(Suite suite:suites){
 				Card card = new Card(suite,i+1,Constantes.COVERED_CARD);
@@ -164,7 +150,4 @@ public class Board {
 			tableaus.add(stackCard);
 		}
 	}
-
-
-	
 }
