@@ -6,9 +6,6 @@ import java.util.Stack;
 
 import es.klondike.model.Card;
 import es.klondike.model.Board;
-import es.klondike.model.Colour;
-import es.klondike.model.Foundation;
-import es.klondike.model.Suite;
 import es.klondike.utils.Constantes;
 
 
