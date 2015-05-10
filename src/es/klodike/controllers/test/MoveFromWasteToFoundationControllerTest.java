@@ -2,14 +2,8 @@ package es.klodike.controllers.test;
 
 import static org.junit.Assert.*;
 
-import java.util.Stack;
-
-import javax.management.remote.TargetedNotification;
-
 import org.junit.Before;
 import org.junit.Test;
-
-import es.klodike.controllers.MoveFromDeckToWasteController;
 import es.klodike.controllers.MoveFromWasteToFoundationController;
 import es.klondike.model.Board;
 import es.klondike.model.Card;
@@ -47,7 +41,7 @@ public class MoveFromWasteToFoundationControllerTest {
 			
 	}
 	@Test
-	public void MoveFromWasteToFoundationControllerTest(){
+	public void MoveFromWasteToFoundationNotEmptyControllerTest(){
 		 int targetFoundationIndex= 0;
 		 Card card;
 		 Card cardNew;

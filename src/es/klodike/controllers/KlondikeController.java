@@ -1,7 +1,6 @@
 package es.klodike.controllers;
 
 import es.klondike.model.Board;
-import es.klondike.model.Foundation;
 
 public class KlondikeController {
 
