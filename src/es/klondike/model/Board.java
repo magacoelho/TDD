@@ -136,7 +136,8 @@ public class Board {
 	private Card getRandomCard() {
 		Random r = new Random();
 		int ordinalFulDeck=0;
-		if(this.fullDeckNotRepartida.size()>1) r.nextInt(this.fullDeckNotRepartida.size()-1);
+		if(this.fullDeckNotRepartida.size()>1)
+			ordinalFulDeck= r.nextInt(this.fullDeckNotRepartida.size()-1);
 		Card card= this.fullDeckNotRepartida.get(ordinalFulDeck);
 		this.fullDeckNotRepartida.remove(ordinalFulDeck);
 		return card;
@@ -175,7 +176,7 @@ public class Board {
 	for(int i=0;i<Constantes.NUMBER_TABLEAUS;i++  ){
 			Stack<Card> stackCard= new Stack<Card>();
 			for(int j=0;j<i;j++){
-				Card card= this.getRandomCard();//ojo aleatoria... y no repetidas.
+				Card card= this.getRandomCard();
 				card.setCovered(Constantes.COVERED_CARD);
 				stackCard.push(card);
 			}

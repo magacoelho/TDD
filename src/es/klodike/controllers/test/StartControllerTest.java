@@ -42,11 +42,11 @@ public class StartControllerTest {
      }
     
     @Test
-    public void getSizeFourColoursTest(){
-    	ArrayList<Integer> sizeFourColours = startController.getBoard().getSizeTableaus();
-    	assertEquals(Constantes.NUMBER_TABLEAUS, sizeFourColours.size());
+    public void getSizeTableausTest(){
+    	ArrayList<Integer> sizeTableaus = startController.getBoard().getSizeTableaus();
+    	assertEquals(Constantes.NUMBER_TABLEAUS, sizeTableaus.size());
     	Integer numberCardsForFourColours= new Integer(0);
-    	for(int sizeFourColor: sizeFourColours){
+    	for(int sizeFourColor: sizeTableaus){
     		numberCardsForFourColours+=sizeFourColor;
     	}
     	assertEquals(new Integer(Constantes.NUMBER_TOTAL_INITIAL_CARDS_FOURCOLOUR), numberCardsForFourColours);

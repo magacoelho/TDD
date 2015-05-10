@@ -1,9 +1,11 @@
 package es.klodike.controllers;
 
+
 import java.util.Stack;
 
 import es.klondike.model.Card;
 import es.klondike.model.Board;
+
 
 public class StartController  extends KlondikeController{
 	public StartController() {
@@ -12,10 +14,8 @@ public class StartController  extends KlondikeController{
 	}
 	    public void start(){
 	    	this.getBoard().init();	
+	    	
 	    }
-	    
-	    
-	    
 	    
 		public boolean verifyNotRepetedCards() {
 		boolean noRepetidas= true;
@@ -43,4 +43,7 @@ public class StartController  extends KlondikeController{
 		}
 	   return noRepetidas;
 	}
+		
+		
+
 }
