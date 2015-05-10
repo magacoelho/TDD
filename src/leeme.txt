@@ -1,1 +1,14 @@
-http://www.juegossolitario.com/juego/Solitario+Master
+Práctica del Klondike.
+La hice según el funcionamiento visto en el siguiente enlace.
+  http://www.juegossolitario.com/juego/Solitario+Master
+  Consideraciones:
+   * Se mueven una sola carta entre los diferentes elementos del Tablero (Board) cada vez
+     q se solicite un movimiento. 
+    
+   * Inicialmente nombré mal algunos componentes del tablero. Los cambios los reflejé en los commits
+       Inicial        Final
+        Tableau----> Board
+        Colour----->  Suite
+        FourColour-> Tableau.
+        
+          
