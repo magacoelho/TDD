@@ -1,4 +1,4 @@
-package es.klodike.controllers.test;
+package es.klodike.controllers;
 
 import static org.junit.Assert.*;
 
