@@ -13,6 +13,10 @@ public class StartController  extends KlondikeController{
 	    public void start(){
 	    	this.getBoard().init();	
 	    }
+	    
+	    
+	    
+	    
 		public boolean verifyNotRepetedCards() {
 		boolean noRepetidas= true;
 	    for (Card card : this.getBoard().getFullDeck()) {

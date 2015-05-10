@@ -14,9 +14,7 @@ public class Board {
 	private Stack<Card> deck;
 	private Stack<Card> waste;
 	private List<Card> fullDeck;
-	private List<Card> fullDeckNotRepartida;
 
-	
 	public Board() {
 		super();
 		this.tableaus= new  ArrayList<Stack<Card>>();
@@ -29,6 +27,56 @@ public class Board {
 		
 	
 	}
+
+// getters adn setters
+	public int sizeWaste() {	
+		return this.getWaste().size();
+	}
+	public int sizeDeck() {
+		return this.getDeck().size();
+	}
+	public int getNumberFoundations() {
+		return this.getFoundations().size();
+	}
+	
+	public ArrayList<Integer> getSizeFoundations() {
+		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
+		for (Foundation fundation :  this.getFoundations()) {
+			sizeFoundations.add(fundation.size());
+		}
+		return sizeFoundations;
+	}
+	
+	public ArrayList<Integer> getSizeTableaus() {
+		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
+		
+		for (Stack<Card> fourColour :this.getTableaus()) {
+			
+			sizeFourColours.add(fourColour.size());
+		}
+		return sizeFourColours;
+	}
+	
+	public Integer getSizeFullDeck() {
+		return this.getFullDeck().size();
+	}
+	
+	public Stack<Card> getTableau(int tableauTargetIndex) {
+		return this.getTableaus().get(tableauTargetIndex);
+	}
+	public boolean isEmptyWaste() {
+		return this.getWaste().size()==0;
+	}
+	
+	public boolean isEmptyFoundation(Foundation foundation) {
+		return foundation.size()==0;
+	}
+	
+	public Foundation getFoundation(int i) {
+		return this.getFoundations().get(i);
+	}
+	private List<Card> fullDeckNotRepartida;
+
 	public ArrayList<Stack<Card>> getTableaus() {
 		return tableaus;
 	}
@@ -138,58 +186,6 @@ public class Board {
 		}
 	}
 
-// getters
-public int sizeWaste() {
-		
-	return this.getWaste().size();
-	}
-	
-	public int sizeDeck() {
-		return this.getDeck().size();
-	}
-	
-	
-	
-	public int getNumberFoundations() {
-		return this.getFoundations().size();
-	}
-	
-	public ArrayList<Integer> getSizeFoundations() {
-		ArrayList<Integer> sizeFoundations= new ArrayList<Integer>();
-		for (Foundation fundation :  this.getFoundations()) {
-			sizeFoundations.add(fundation.size());
-		}
-		return sizeFoundations;
-	}
-	
-	public ArrayList<Integer> getSizeTableaus() {
-		ArrayList<Integer> sizeFourColours= new ArrayList<Integer>();
-
-		for (Stack<Card> fourColour :this.getTableaus()) {
-		  	
-		  sizeFourColours.add(fourColour.size());
-		}
-		return sizeFourColours;
-	}
-	
-	public Integer getSizeFullDeck() {
-		return this.getFullDeck().size();
-	}
-
-	public Stack<Card> getTableau(int tableauTargetIndex) {
-		return this.getTableaus().get(tableauTargetIndex);
-	}
-	public boolean isEmptyWaste() {
-		return this.getWaste().size()==0;
-	}
-
-	public boolean isEmptyFoundation(Foundation foundation) {
-		return foundation.size()==0;
-	}
-
-	public Foundation getFoundation(int i) {
-		return this.getFoundations().get(i);
-	}
 
 	
 }
